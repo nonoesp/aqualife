@@ -1,0 +1,34 @@
+{
+  "name": "aqualife",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@directus/sdk-js": "^9.0.0-rc.44",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "next": "^10.0.6",
+    "react": "^17.0.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-bootstrap": "^1.5.0",
+    "react-datepicker": "^3.6.0",
+    "react-dom": "^17.0.1",
+    "react-player": "^2.9.0",
+    "react-scroll-parallax": "^2.3.5",
+    "react-slick": "^0.28.0",
+    "react-spring": "^8.0.27",
+    "react-use-cart": "^1.11.1",
+    "react-video-scroll": "^1.0.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
