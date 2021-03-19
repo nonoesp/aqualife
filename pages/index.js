@@ -34,7 +34,7 @@ const VideoScroll = dynamic(() => import("react-video-scroll").then((mod) => mod
 });
 
 import {Button} from 'react-bootstrap';
-import ButtonToolBar from 'react-bootstrap/ButtonToolBar';
+import {ButtonToolBar} from 'react-bootstrap';
 
 
 class index extends Component {
