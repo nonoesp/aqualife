@@ -9,17 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export class Product extends Component {
  constructor(props){
    super(props); 
-     this.state={product:props.product,category:props.category}
+     this.state={product:{},category:props.category}
 
  }
-async componentDidMount(){
-      var products = await  directus.items('products').read()
-      this.setState({
-        products:products.data[0],
 
-      })
-  
-  }
 
 render(){ 
       return(
@@ -37,7 +30,7 @@ render(){
 
 
       <div class="col-md-6 popUpBottle"> 
-      <img src={'http://localhost:8055/assets/'+this.state.product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
+      <img src={'http://aqualifecms.businessexchange.me/assets/'+this.state.product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
          </div> 
   
      <div class="col-md-4"> 
