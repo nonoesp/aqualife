@@ -34,7 +34,7 @@ const VideoScroll = dynamic(() => import("react-video-scroll").then((mod) => mod
 });
 
 import {Button} from 'react-bootstrap';
-import {ButtonToolBar} from 'react-bootstrap';
+
 
 
 class index extends Component {
@@ -130,13 +130,13 @@ async componentDidMount(){
         <p class="productBrief">{category.name}</p>
         <p class="description"> {category.description}</p>
         <div>
-        <ButtonToolBar cart={cart}> 
+        <Button cart={cart}> 
            <Button 
            onClick={()=> this.setState({addModalsShow: true})}> 
              Place order 
              </Button>
 
-          </ButtonToolBar >
+          </Button >
     
     <div class="bottlePosition">
        {category.products.map((product,index)=> (
