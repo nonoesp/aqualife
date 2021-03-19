@@ -13,7 +13,7 @@ import DirectusSDK from '@directus/sdk-js';
 
 import ScrollAnimation from 'react-animate-on-scroll';
 
-const directus = new DirectusSDK('http://aqualifecms.businessexchange.me');
+const directus = new DirectusSDK('https://aqualifecms.businessexchange.me');
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Carousel from "react-slick";
