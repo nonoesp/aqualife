@@ -179,13 +179,13 @@ async componentDidMount(){
        </div>
       
        <div>
-        <ButtonToolBar> 
+        <Button> 
            <Button 
            onClick={()=> this.setState({addModalsShowNews: true})}> 
               <p class="readMore"> Read More</p>
              </Button>
 
-              </ButtonToolBar >
+              </Button>
               
               <News
               show={this.state.addModalsShowNews}
