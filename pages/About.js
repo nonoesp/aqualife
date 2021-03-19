@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DirectusSDK from '@directus/sdk-js';
 
-const directus = new DirectusSDK('http://aqualifecms.businessexchange.me/');
+const directus = new DirectusSDK('https://aqualifecms.businessexchange.me/');
 
 class About extends Component {
 
