@@ -214,11 +214,11 @@ render(){
       ))}
  </select> */}
     
-    <select value={this.state.products} onChange={this.handleChange}>
+   {/* <select value={this.state.products} onChange={this.handleChange}>
             {this.state.products.map((product) => (
               <option value={JSON.stringify(product)}>{product.product_price}</option>
             ))}
-      </select>
+      </select>*/}
     
         <div class="px-2"> 
             <div class="px-4 py-1 addBtn">
