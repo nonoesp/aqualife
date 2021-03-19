@@ -20,6 +20,7 @@
     "react-scroll-parallax": "^2.3.5",
     "react-slick": "^0.28.0",
     "react-spring": "^8.0.27",
+    "react-bootstrap": "^1.5.0",
     "react-use-cart": "^1.11.1",
     "react-video-scroll": "^1.0.1",
     "slick-carousel": "^1.8.1"
