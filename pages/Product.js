@@ -9,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export class Product extends Component {
  constructor(props){
    super(props); 
-     this.state={product:{},category:props.category}
+     var product = props.product?props.product:{}
+     this.state={product:product,category:props.category}
 
  }
 
