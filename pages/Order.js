@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useCart} from 'react-use-cart '
 import DirectusSDK from '@directus/sdk-js';
 
-const directus = new DirectusSDK('http://aqualifecms.businessexchange.me/');
+const directus = new DirectusSDK('https://aqualifecms.businessexchange.me/');
 
 // const { addItem } = useCart();
 
