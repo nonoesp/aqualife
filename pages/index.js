@@ -168,7 +168,7 @@ async componentDidMount(){
 
        {this.state.news.map((news)=> (
              <div class="col-md-4">
-             <img src={'http://localhost:8055/assets/'+news.image+'?key=system-medium-contain'} class="appLogo" alt="logo" />
+             <img src={'http://aqualifecms.businessexchange.me/assets/'+news.image+'?key=system-medium-contain'} class="appLogo" alt="logo" />
              <div >
              <div class="category">
               <p class="categoryTitle">{news.category} </p>
