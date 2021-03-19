@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap';
 
 import ProductForm from './ProductForm';
 import Product from './Product';
-import Total from './Total';
+
 import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useCart} from 'react-use-cart '
