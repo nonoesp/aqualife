@@ -140,7 +140,7 @@ async componentDidMount(){
     
     <div class="bottlePosition">
        {category.products.map((product,index)=> (
-        <img src={'http://aqualifecms.businessexchange.me/assets/'+product.products_id.product_image+'?key=system-medium-contain'}  onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
+        <img src={'https://aqualifecms.businessexchange.me/assets/'+product.products_id.product_image+'?key=system-medium-contain'}  onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
                           )) }
                   <Product show={this.state.addModalsShowProduct} product={this.state.product} onHide={addModalsCloseProduct}/>
                   </div>
@@ -168,7 +168,7 @@ async componentDidMount(){
 
        {this.state.news.map((news)=> (
              <div class="col-md-4">
-             <img src={'http://aqualifecms.businessexchange.me/assets/'+news.image+'?key=system-medium-contain'} class="appLogo" alt="logo" />
+             <img src={'https://aqualifecms.businessexchange.me/assets/'+news.image+'?key=system-medium-contain'} class="appLogo" alt="logo" />
              <div >
              <div class="category">
               <p class="categoryTitle">{news.category} </p>
