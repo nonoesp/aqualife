@@ -9,8 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export class Product extends Component {
  constructor(props){
    super(props); 
-     this.state={product:props.product}
-     this.state={category:props.category}
+     this.state={product:props.product,category:props.category}
+
  }
 async componentDidMount(){
       var products = await  directus.items('products').read()
@@ -37,30 +37,30 @@ render(){
 
 
       <div class="col-md-6 popUpBottle"> 
-      <img src={'http://localhost:8055/assets/'+this.props.product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
+      <img src={'http://localhost:8055/assets/'+this.state.product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
          </div> 
   
      <div class="col-md-4"> 
         <div class="row" class="order"> 
-             <p class="orderTitle"> {this.props.product.product_name} </p> 
+             <p class="orderTitle"> {this.state.product.product_name} </p> 
              <span class="orderSubTitle"> Fill out your info</span>
         </div>  
         <div> 
         <div class="row pt-5">
             <p class="bottleCategory"> Calories</p>
-            <span class="px-5"> {this.props.product.calories}  </span>
+            <span class="px-5"> {this.state.product.calories}  </span>
         </div>
         <div class="row">
             <p class="bottleCategory">Total Fat 0g</p>
-            <span class="px-5"> {this.props.product.fat}</span>
+            <span class="px-5"> {this.state.product.fat}</span>
         </div>
         <div class="row ">
             <p class="bottleCategory">Sodium 0mg</p>
-            <span class="px-5">{this.props.product.sodium} </span>
+            <span class="px-5">{this.state.product.sodium} </span>
         </div>
     </div>
     <div class="row"> 
-        <p class="description"> {this.props.product.product_description} </p>
+        <p class="description"> {this.state.product.product_description} </p>
     </div>
 </div>
 </div>
