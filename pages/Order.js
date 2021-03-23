@@ -79,9 +79,11 @@ async getCart()
       
       var selected_products= await  directus.items('products').read(product_ids)
 
-      console.log(localCart)    
+      var array = [selected_products.data].flat()
+
+      console.log(array)    
       this.setState({
-        selected_products:selected_products.data,
+        selected_products:array
     })        
 
     var total = localCart.map((value,index) => value.quantity * ((selected_products.data[index])?selected_products.data[index].product_price:0))

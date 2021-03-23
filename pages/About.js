@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DirectusSDK from '@directus/sdk-js';
-
+import '../global.js';
 const directus = new DirectusSDK(global.URL);
 
 class About extends Component {
