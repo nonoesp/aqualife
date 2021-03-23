@@ -3,13 +3,15 @@ import {Modal} from 'react-bootstrap';
 
 import ProductForm from './ProductForm';
 import Product from './Product';
-
+import Cart from '../cart.js';
+import CartItem from './components/cartItem';
+import '../global.js';
 import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useCart} from 'react-use-cart '
 import DirectusSDK from '@directus/sdk-js';
 
-const directus = new DirectusSDK('http://localhost:8055/');
+const directus = new DirectusSDK(global.URL);
 
 // const { addItem } = useCart();
 
@@ -21,6 +23,7 @@ export class Order extends Component {
       products:[],
       product:{},
       selectedOption:{},
+      selected_products:[],
       product_id:"",
       cart:[], 
       cartArr:[],
@@ -46,101 +49,52 @@ export class Order extends Component {
  
     
   handleInputChange = (event) => {
-    this.setState({product: event.target.value});
+    this.setState({product: JSON.parse(event.target.value)});
+    console.log(JSON.parse(event.target.value))
 
   }
 
   addToList() {
-    var array = this.state.products.concat(this.state.selectedOption)
-    // console.log(this.state.product)
-    // this.setState({
-    //   products: this.state.products.push(this.state.selectedOption),
-    //   // quantity: this.state.quantity + 1
-    // });
-    // this.props.handleTostal(this.props.price);
-    console.log(array)
+    console.log(this.state.product.id)
+    var cart = new Cart(this.state.product.id);
+    cart.addTocart();
+    this.getCart();
+
   }
 
-// addToList =(id)=>{
- 
-//   let tempProduct =[...this.state.products];
-//   const index = tempProduct.indexOf(this.getItem(id));
-//   const product= tempProduct[index];
-//   product.inCart=true;
-//   product.count=1;
-//   const price=product.product_price;
-//   product.total=product_price;
-//   this.setState(() =>{
-//     return {products:tempProduct, Cart:[...this.state.cart,product]}
-//   })
-// }
-
-  // addToList(product) {
-  //   this.setState({
-  //     // products: this.state.products.push(product),
-  //     // quantity: this.state.quantity + 1
-  //   });
-  // }
   async componentDidMount(){
     var products= await  directus.items('products').read()
 
     this.setState({
         products:products.data,
     })
+    this.getCart();
 }
-getData()
-{
-    return this;
-}
-// checkCart(){
-//   this.cartArr = [];
-//   if(localStorage.getItem('cart') != null)
-//   {
-//       this.cartArr = JSON.parse(localStorage.getItem('cart'));
-//   }
+async getCart()
+    {
+      var localCart = JSON.parse(localStorage.getItem('cart'));
+      
+      const product_ids = localCart.map(e => e['product_id']);
+      
+      
+      var selected_products= await  directus.items('products').read(product_ids)
 
-//  this.index = this.cartArr.findIndex(item => {
-//           return (item.product_id == this.product_id)
-//         })
-        
-//     if(this.index == -1)
-//     {
-//         this.index = this.cartArr.push(this) - 1;
+      console.log(localCart)    
+      this.setState({
+        selected_products:selected_products.data,
+    })        
 
-//  this.quantity = this.cartArr[this.index].quantity;  
-// }
-// }
+    var total = localCart.map((value,index) => value.quantity * ((selected_products.data[index])?selected_products.data[index].product_price:0))
+    total = total.reduce((a, b) => a + b, 0)
+    this.setState({
+      total:total
+    })
+      // this.$http.post('/api/getCart',{localCart:localCart})
+      // .then(response => {
+      //    this.cart = response.data.cart ;
+      //  });
+    }
 
-// saveCart()
-// {
-//     if(this.cartArr[this.index])
-//     {
-//         this.cartArr[this.index].quantity = this.quantity;
-//     }
-    
-//      const getCircularReplacer = () => {
-//         const seen = new WeakSet();
-//         return (key, value) => {
-//           if (typeof value === "object" && value !== null) {
-//             if (seen.has(value)) {
-//               return;
-//             }
-//             seen.add(value);
-//           }
-//           return value;
-//         };
-//       };
-//  localStorage.setItem("cart", JSON.stringify(this.cartArr, getCircularReplacer()));
-//    }
-
-
-
-// removeItem(index) {
-//   const serviceAvailed = this.state.serviceAvailed;
-//   serviceAvailed.splice(index, 1);
-//   this.setState({ serviceAvailed });
-//   console.log(serviceAvailed)
-//  }
 
    removeItem(index)
    {
@@ -225,38 +179,28 @@ render(){
       ))}
  </select> */}
     
-   <select value={this.state.products} onChange={this.handleChange}>
-            {this.state.products.map((product) => (
-              <option value={JSON.stringify(product)}>{product.product_name} {product.product_price}</option>
+   <select class="form-control col-md-8"   onChange={this.handleInputChange}>
+            {this.state.products.map((product,index) => (
+              <option key={'product-'+index} value={JSON.stringify(product)}>{product.product_name} {product.product_price}</option>
             ))}
       </select>
     
         <div class="px-2"> 
             <div class="px-4 py-1 addBtn">
-                {/* <button  onClick={() => this.addToList()}> Add to list  </button>  */}
-                <button onClick={this.addToList}> Add to list  </button> 
+                <button  onClick={() => this.addToList()}> Add to list  </button> 
+                {/* <button onClick={this.addToList}> Add to list  </button>  */}
                 </div>
             </div>
 
            </div>
       <span class="orderSubTitle">Your list</span>
-        <div class="list pt-3"> 
-            <img src='../images/bottle.png' alt="bottle"/>
-              <div class="px-4"> <p> Aqualife Drinking water 0.5L</p>
-                <span class="orderSubTitle"> qty</span>
-               <div class="qty pt-3">  
-               <button onClick={this.IncrementItem}>+</button>
-               <input className="inputne" value={this.state.quantity} onChange={this.handleChange}/>
-                      <button onClick = {this.DecreaseItem}  disabled={this.state.qty < 1}>-</button>
-                </div> 
-                </div>
-
-        <span class="price">4.00 USD</span>
-            </div>
+      {this.state.selected_products.map((product,index) => (
+              <CartItem  key={'product'+index} cart={product} getData={this.getCart} />
+            ))}
             <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
-            <span class="price px-5  pt-4" >4.00 USD</span>
+            <span class="price px-5  pt-4" >{this.state.total} USD</span>
             </div>
-            <div class="row pr-5" id="confirm"> 
+            <div class="row pr-5 pb-5" id="confirm"> 
             <div class="px-4 py-1 addBtn" >
                 Confirm Order
             </div> </div>

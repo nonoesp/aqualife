@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import DirectusSDK from '@directus/sdk-js';
 
-
-const directus = new DirectusSDK('http://localhost:8055/');
+import '../global.js';
+const directus = new DirectusSDK(global.URL);
 
 class Form extends Component {  
     

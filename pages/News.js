@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Modal, Form} from 'react-bootstrap';
-
+import '../global.js';
 import DatePicker from 'react-datepicker';
 
 import { CartProvider, useCart } from "react-use-cart";
@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useCart} from 'react-use-cart '
 import DirectusSDK from '@directus/sdk-js';
 
-const directus = new DirectusSDK('http://localhost:8055/');
+const directus = new DirectusSDK(global.URL);
 
 // const { addItem } = useCart();
 
