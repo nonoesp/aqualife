@@ -1,2 +1,2 @@
-global.URL = "https://aqualifecmsbusinessexchange.me/"
-global.ASSET_URL = "https://aqualifecmsbusinessexchange.me/assets/"
+global.URL = "https://aqualifecms.businessexchange.me/"
+global.ASSET_URL = "https://aqualifecms.businessexchange.me/assets/"
