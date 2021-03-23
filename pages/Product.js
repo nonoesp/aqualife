@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Modal, Form} from 'react-bootstrap';
 import DirectusSDK from '@directus/sdk-js';
 
-const directus = new DirectusSDK('https://aqualifecms.businessexchange.me/');
+const directus = new DirectusSDK('http://localhost:8055/');
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -31,9 +31,9 @@ render(){
 
 
       <div class="col-md-6 popUpBottle"> 
-      <img src={'https://aqualifecms.businessexchange.me/assets/'+this.state.product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
+      <img src={'http://localhost:8055/'+this.state.product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
          </div> 
-  
+    
      <div class="col-md-4"> 
         <div class="row" class="order"> 
              <p class="orderTitle"> {this.state.product.product_name} </p> 

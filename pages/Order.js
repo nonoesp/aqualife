@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useCart} from 'react-use-cart '
 import DirectusSDK from '@directus/sdk-js';
 
-const directus = new DirectusSDK('https://aqualifecms.businessexchange.me/');
+const directus = new DirectusSDK('http://localhost:8055/');
 
 // const { addItem } = useCart();
 
@@ -23,6 +23,7 @@ export class Order extends Component {
       selectedOption:{},
       product_id:"",
       cart:[], 
+      cartArr:[],
       total: 0,
       quantity:0,
       show: true,
@@ -91,50 +92,60 @@ getData()
 {
     return this;
 }
-checkCart(){
-  this.cartArr = [];
-  if(localStorage.getItem('cart') != null)
-  {
-      this.cartArr = JSON.parse(localStorage.getItem('cart'));
-  }
+// checkCart(){
+//   this.cartArr = [];
+//   if(localStorage.getItem('cart') != null)
+//   {
+//       this.cartArr = JSON.parse(localStorage.getItem('cart'));
+//   }
 
- this.index = this.cartArr.findIndex(item => {
-          return (item.product_id == this.product_id)
-        })
+//  this.index = this.cartArr.findIndex(item => {
+//           return (item.product_id == this.product_id)
+//         })
         
-    if(this.index == -1)
-    {
-        this.index = this.cartArr.push(this) - 1;
+//     if(this.index == -1)
+//     {
+//         this.index = this.cartArr.push(this) - 1;
 
- this.quantity = this.cartArr[this.index].quantity;  
-  
-}
-}
-saveCart()
-{
-    if(this.cartArr[this.index])
-    {
-        this.cartArr[this.index].quantity = this.quantity;
-    }
+//  this.quantity = this.cartArr[this.index].quantity;  
+// }
+// }
+
+// saveCart()
+// {
+//     if(this.cartArr[this.index])
+//     {
+//         this.cartArr[this.index].quantity = this.quantity;
+//     }
     
-     const getCircularReplacer = () => {
-        const seen = new WeakSet();
-        return (key, value) => {
-          if (typeof value === "object" && value !== null) {
-            if (seen.has(value)) {
-              return;
-            }
-            seen.add(value);
-          }
-          return value;
-        };
-      };
- localStorage.setItem("cart", JSON.stringify(this.cartArr, getCircularReplacer()));
+//      const getCircularReplacer = () => {
+//         const seen = new WeakSet();
+//         return (key, value) => {
+//           if (typeof value === "object" && value !== null) {
+//             if (seen.has(value)) {
+//               return;
+//             }
+//             seen.add(value);
+//           }
+//           return value;
+//         };
+//       };
+//  localStorage.setItem("cart", JSON.stringify(this.cartArr, getCircularReplacer()));
+//    }
+
+
+
+// removeItem(index) {
+//   const serviceAvailed = this.state.serviceAvailed;
+//   serviceAvailed.splice(index, 1);
+//   this.setState({ serviceAvailed });
+//   console.log(serviceAvailed)
+//  }
+
+   removeItem(index)
+   {
+   this.cartArr.splice(this.index,1);  
    }
-  //  removeItem()
-  //  {
-  //     this.cartArr.splice(this.index, 1);            
-  //  }
 
   IncrementItem = () => {
     this.setState(prevState => {
@@ -154,9 +165,9 @@ DecreaseItem = () => {
         quantity: prevState.quantity - 1
       }
     } else {
-      // this.removeItem();
+      this.removeItem();
     }
-    this.saveCart();
+    // this.saveCart();
   });
    // this.props.handleTotal(-this.props.price);
 }
@@ -214,11 +225,11 @@ render(){
       ))}
  </select> */}
     
-   {/* <select value={this.state.products} onChange={this.handleChange}>
+   <select value={this.state.products} onChange={this.handleChange}>
             {this.state.products.map((product) => (
-              <option value={JSON.stringify(product)}>{product.product_price}</option>
+              <option value={JSON.stringify(product)}>{product.product_name} {product.product_price}</option>
             ))}
-      </select>*/}
+      </select>
     
         <div class="px-2"> 
             <div class="px-4 py-1 addBtn">
@@ -242,13 +253,13 @@ render(){
 
         <span class="price">4.00 USD</span>
             </div>
-            {/* <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
+            <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
             <span class="price px-5  pt-4" >4.00 USD</span>
             </div>
             <div class="row pr-5" id="confirm"> 
             <div class="px-4 py-1 addBtn" >
                 Confirm Order
-            </div> </div> */}
+            </div> </div>
       {/* <Product
           name={product.name}
           price={product.price}

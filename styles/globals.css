@@ -43,6 +43,15 @@ li{
   font-family:MontserratRegular;
   src: url('../fonts/Montserrat-Regular.ttf');
 }
+#news .btn-primary.focus, .btn-primary:focus{
+  box-shadow: 0 0 20px 0.2rem #ffffff !important ;
+}
+.animated:focus{
+  outline:none !important;
+}
+video:focus{
+  outline:none !important;
+}
 .contentModule {
   width: 100%;
   padding-right: 15px;
