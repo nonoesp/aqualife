@@ -187,7 +187,7 @@ render(){
             ))}
       </select>
     
-        <div class="px-2"> 
+        <div class="px-2 add"> 
             <div class="px-4 py-1 addBtn">
                 <button  onClick={() => this.addToList()}> Add to list  </button> 
                 {/* <button onClick={this.addToList}> Add to list  </button>  */}

@@ -145,12 +145,11 @@ async componentDidMount(){
                       <p class="productBrief">{category.name}</p>
                       <p class="description"> {category.description}</p>
                       <div>
-                        <Button cart={cart}> 
-                        <Button 
+                        <Button cart={cart}
                             onClick={()=> this.setState({addModalsShow: true})}> 
                         Place order 
                         </Button>
-                        </Button >
+                   
                         <div class="bottlePosition">
                             {category.products.map((product,index)=> (
                             <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} title={product.products_id.product_name} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
