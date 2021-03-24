@@ -72,7 +72,7 @@ return(
 
             <span class="orderSubTitle"> Preffered Delivery Time</span>
 <div class="row py-3"> 
-<div class="col-md-4" id="datePicker">
+<div class="col-lg-4" id="datePicker">
   <DatePicker
       selected={ this.state.startDate }
       onChange={ this.handleChange }
@@ -82,8 +82,8 @@ return(
 {/* <button class="btn btn-primary">Show Date</button> */}
 </div> 
 
-<div class="col-md-8 px-5">
-    <select class="form-control" name="time" onChange={this.handleInputChange}>
+<div class="col-lg-8 px-5 date">
+    <select class="form-control " name="time" onChange={this.handleInputChange}>
             <option selected>am</option>
                 <option value="1">pm</option>
     </select>

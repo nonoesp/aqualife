@@ -25,6 +25,7 @@ export class Order extends Component {
       selectedOption:{},
       selected_products:[],
       product_id:"",
+      price:{},
       cart:[], 
       cartArr:[],
       total: 0,
@@ -36,9 +37,9 @@ export class Order extends Component {
      this.addToList = this.addToList.bind(this);
      this.handleInputChange = this.handleInputChange.bind(this);
      this.calculateTotal = this.calculateTotal.bind(this);
-   // this.showProduct = this.showProduct.bind(this);
+     this.getCart = this.getCart.bind(this);
   }
-  Calculate = item => {
+  calculate = (selectedOption) => {
     return product.quantity * product.price;
   };
 
@@ -55,7 +56,7 @@ export class Order extends Component {
   }
 
   addToList() {
-    console.log(this.state.product.id)
+    // console.log(this.state.product.id)
     var cart = new Cart(this.state.product.id);
     cart.addTocart();
     this.getCart();
@@ -72,61 +73,52 @@ export class Order extends Component {
 }
 async getCart()
     {
+      
       var localCart = JSON.parse(localStorage.getItem('cart'));
+      if(localCart)
+      {
+        const product_ids = localCart.map(e => e['product_id']);
+        console.log(localCart)  
+        if(product_ids.length > 0)
+        {
+                  var selected_products= await  directus.items('products').read(product_ids)
+  
+                  var array = [selected_products.data].flat()
+            
+                  // var products = this.state.products.filter( function( el ) {
+                  //   return array.indexOf( el ) < 0;
+                  // } );
+                  //var products = this.state.products.filter( ( el ) => array.filter( ( item ) => item.product_id != el.product_id ) );
+                  console.log(products)
+                // alert('');
+                  this.setState({
+                    selected_products:array,
+                    //products:products
+                })        
+            
+                var total = localCart.map((value,index) => value.quantity * ((selected_products.data[index])?selected_products.data[index].product_price:0))
+                total = total.reduce((a, b) => a + b, 0)
+                this.setState({
+                  total:total
+                })
+        }
+        else{
+          this.setState({
+            selected_products:[]
+        })  
+        }
+      }
       
-      const product_ids = localCart.map(e => e['product_id']);
       
+    
       
-      var selected_products= await  directus.items('products').read(product_ids)
 
-      var array = [selected_products.data].flat()
-
-      console.log(array)    
-      this.setState({
-        selected_products:array
-    })        
-
-    var total = localCart.map((value,index) => value.quantity * ((selected_products.data[index])?selected_products.data[index].product_price:0))
-    total = total.reduce((a, b) => a + b, 0)
-    this.setState({
-      total:total
-    })
       // this.$http.post('/api/getCart',{localCart:localCart})
       // .then(response => {
       //    this.cart = response.data.cart ;
       //  });
     }
 
-
-   removeItem(index)
-   {
-   this.cartArr.splice(this.index,1);  
-   }
-
-  IncrementItem = () => {
-    this.setState(prevState => {
-      if(prevState.quantity < 9) {
-        return {
-          quantity: prevState.quantity + 1
-        }
-      } else {
-        return null;
-      }
-    });
-}
-DecreaseItem = () => {
-  this.setState(prevState => {
-    if(prevState.quantity > 0) {
-      return {
-        quantity: prevState.quantity - 1
-      }
-    } else {
-      this.removeItem();
-    }
-    // this.saveCart();
-  });
-   // this.props.handleTotal(-this.props.price);
-}
 
 calculateTotal(price) {
   this.setState({
@@ -183,11 +175,11 @@ render(){
     
    <select class="form-control col-md-8"   onChange={this.handleInputChange}>
             {this.state.products.map((product,index) => (
-              <option key={'product-'+index} value={JSON.stringify(product)}>{product.product_name} {product.product_price}</option>
+              <option key={'product-'+index} value={JSON.stringify(product)}>{product.product_name}  {product.product_price} USD </option>
             ))}
       </select>
     
-        <div class="px-2 add"> 
+        <div class="px-2 addBtnPadding"> 
             <div class="px-4 py-1 addBtn">
                 <button  onClick={() => this.addToList()}> Add to list  </button> 
                 {/* <button onClick={this.addToList}> Add to list  </button>  */}

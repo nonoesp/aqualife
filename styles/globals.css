@@ -24,6 +24,10 @@ a {
 li{
   list-style: none;
 }
+.mobileVideo video{
+  height: 100%;
+  width: 100%;
+}
 #one{
   border:none !important;
 }
@@ -323,9 +327,7 @@ video:focus{
     position: absolute;
     top: calc(2600px * 2);
     z-index: 1000;
-
     width: 100%;
-
   }
 #productDetail .bottleDetail{
 position:absolute;
@@ -439,6 +441,21 @@ outline:none;
       max-width: 1200px;   padding-left: 15px;
   }
   }
+
+  @media (min-width:1000px){
+    .mobileVideo{
+      display:none !important;
+    }
+  }
+  @media (max-width: 940px){
+    .mobileVideo{
+      display:block !important;
+    }
+    .body-container{
+      top:unset !important;
+    }
+    
+  }
   @media (max-width: 600px){
     .centeredImage {
        width:100%; height:100%;
@@ -479,7 +496,13 @@ outline:none;
     .contentModule {
     padding-left: 15px;
   }
-  .add{
+  .addBtnPadding{
     padding-top:40px;
+  }
+  #datePicker{
+    width:20%;
+  }
+  .date{
+    width:40% !important;
   }
   }

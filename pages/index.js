@@ -6,6 +6,7 @@ import Product from './Product';
 import News from './News';
 import Contact from './Contact';
 import Footer from './Footer';
+import Test from './Test';
 import dynamic from 'next/dynamic'
 import '../global.js';
 
@@ -97,7 +98,9 @@ async componentDidMount(){
     return (
      
       <div>
+        <div  class="d-none d-md-block"> 
         <VideoScroll
+       
             onLoad={this.onLoad}
             onScroll={this.onScroll}
             playbackRate={300}
@@ -117,12 +120,23 @@ async componentDidMount(){
                 playsInline
                 />
          </VideoScroll> 
+         </div>
+    <div class="mobileVideo"> 
+       <video 
+        autoPlay
+        loop
+        muted
+         src="../aqualife.mp4"
+          type="video/mp4"
+         >
+         
+           </video>
+      </div>
+         {/* <div class="col-md-12">
+         <video src="../aqualife.mp4"/>
+         </div> */}
       <div class="body-container">
-          {/* 
-          <div class="app-container">
-            <Video />
-          </div>
-          */}
+
           <div class="app-container">
             <Header />
           </div>

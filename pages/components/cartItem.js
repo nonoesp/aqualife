@@ -30,7 +30,7 @@ export class CartItem extends Component {
             cartModel :cart.getData()
         })
         
-        console.log(cart)
+        
     }
     removeCart(){
         this.state.cartModel.removeFromCart();

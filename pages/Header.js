@@ -36,6 +36,7 @@ function Header() {
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#products">Products</Nav.Link>
             <Nav.Link href="#news">News</Nav.Link>
+            {/* <Nav.Link href="/Test">Test</Nav.Link> */}
             <div  class="logoPosition"> 
             <Nav.Link> <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link>
             </div>
