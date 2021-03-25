@@ -6,7 +6,6 @@ import Product from './Product';
 import News from './News';
 import Contact from './Contact';
 import Footer from './Footer';
-import Test from './Test';
 import dynamic from 'next/dynamic'
 import '../global.js';
 
