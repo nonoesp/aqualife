@@ -11,7 +11,6 @@ import '../global.js';
 
 import DirectusSDK from '@directus/sdk-js';
 
-import ScrollAnimation from 'react-animate-on-scroll';
 
 // const directus = new DirectusSDK('http://aqualifecms.businessexchange.me');
 const directus = new DirectusSDK(global.URL);
@@ -28,12 +27,16 @@ import Carousel from "react-slick";
 //   const { VideoScroll } = require('react-video-scroll'); 
 // }  
 
-const VideoScroll = dynamic(() => import("react-video-scroll").then((mod) => mod.VideoScroll), {
-  ssr: false
-});
+// const VideoScroll = dynamic(() => import("react-video-scroll").then((mod) => mod.VideoScroll), {
+//   ssr: false
+// });
+
+const Test = dynamic(
+  () => import('./components/Test'),
+  { loading: () => <p>...</p>, ssr: false }
+);
 
 import {Button} from 'react-bootstrap';
-
 
 
 class index extends Component {
@@ -95,7 +98,7 @@ async componentDidMount(){
      
       <div>
         <div  class="d-none d-md-block"> 
-        <VideoScroll
+        {/* <VideoScroll
        
             onLoad={this.onLoad}
             onScroll={this.onScroll}
@@ -115,19 +118,23 @@ async componentDidMount(){
                 height: '100%' }}
                 playsInline
                 />
-         </VideoScroll> 
+         </VideoScroll>  */}
+            
+            <Test/>
+
          </div>
-    <div class="mobileVideo"> 
-       <video 
-        autoPlay
-        loop
-        muted
-         src="../aqualife.mp4"
-          type="video/mp4"
-         >
-         
-           </video>
-      </div>
+      
+        <div class="mobileVideo"> 
+          <video 
+            autoPlay
+            loop
+            muted
+            src="../aqualife.mp4"
+              type="video/mp4"
+            >
+            
+              </video>
+          </div>
          {/* <div class="col-md-12">
          <video src="../aqualife.mp4"/>
          </div> */}
@@ -160,7 +167,7 @@ async componentDidMount(){
                         Place order 
                         </Button>
                    
-                        <div class="bottlePosition">
+                        <div class="bottlePosition pt-4">
                             {category.products.map((product,index)=> (
                             <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} title={product.products_id.product_name} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
                             )) }
@@ -239,6 +246,7 @@ async componentDidMount(){
           <div class="contentModule">
             <Contact/>
           </div>
+       
           <div class="App">
             <Footer/>
           </div>

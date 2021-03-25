@@ -58,9 +58,10 @@ export class CartItem extends Component {
                     <div class="px-4"> <p> { this.state.cart.product_name }</p>
                         <span class="orderSubTitle"> qty</span>
                     <div class="qty pt-3">  
-                    <button  class="add" onClick={this.addToCart}>+</button>
+                   
+                    <button class="add"  onClick = {this.decFromCart}  disabled={this.state.cartModel.quantity < 1}>-</button>
                     <input className="inputne" value={this.state.cartModel.quantity} />
-                    <button class="remove" onClick = {this.decFromCart}  disabled={this.state.cartModel.quantity < 1}>-</button>
+                    <button  class="remove" onClick={this.addToCart}>+</button>
                         </div> 
                         </div>
 

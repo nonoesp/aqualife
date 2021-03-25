@@ -13,7 +13,7 @@ const directus = new DirectusSDK(global.URL);
 
 // const { addItem } = useCart();
 
-export class News extends Component {
+class News extends Component {
  constructor(props){
 
   // this.product_id = product_id;
