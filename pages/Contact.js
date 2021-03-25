@@ -30,7 +30,7 @@ async componentDidMount(){
                         </svg></i>
                                  <h6>Email Address </h6>
                                  </li> 
-                                 <span class="desc text-center">{this.state.details.email}</span>
+                                 <a href="mailto:test.test@email.com"> <span class="desc text-center">{this.state.details.email}</span> </a>
                                  
                                  </div>
                     <div class="py-4">
@@ -40,7 +40,7 @@ async componentDidMount(){
                        </i>
                                  <h6>Phone </h6>
                                  </li> 
-                                 <span class="desc text-center">{this.state.details.phone}</span>
+                                 <a href="tel:5551234567">  <span class="desc text-center">{this.state.details.phone}</span> </a>
                                  </div>
                   <div class="py-4">
                        <li class="contentPosition"> <i>

@@ -75,9 +75,6 @@ async componentDidMount(){
   }
  
     onLoad = ({ wrapper, playbackRate, el }) => {
-      console.log(wrapper);
-      console.log(playbackRate);
-      console.log(el);
       document.getElementById("one").style.marginTop = `calc(${Math.floor(document.getElementById('v0').duration) * playbackRate + 'px'})`
      
     }

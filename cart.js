@@ -41,16 +41,14 @@ export default class Cart {
           else{
               this.removeCart();
           }
-          
-          
           this.saveCart();
+          
       }
       
       removeCart()
       {
         //   this.cartArr.splice(this.index,items-1);
          this.cartArr.splice(this.index, 1);
-         console.log(this.cartArr);
         //   this.finds.splice(this.index, 1);
                  
       }
@@ -89,7 +87,7 @@ export default class Cart {
               };
             };
     
-    
+    // console.log(this.cartArr);
         
           localStorage.setItem("cart", JSON.stringify(this.cartArr, getCircularReplacer()));
 

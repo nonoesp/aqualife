@@ -30,7 +30,7 @@ export class CartItem extends Component {
             cartModel :cart.getData()
         })
         
-        
+        console.log(cart)
     }
     removeCart(){
         this.state.cartModel.removeFromCart();
@@ -42,10 +42,12 @@ export class CartItem extends Component {
               if(this.state.cartModel.quantity <= 1){
                     this.props.getData();
                }
+               this.props.getData();
           }
 
     addToCart(){
               this.state.cartModel.addTocart();
+              this.props.getData();
           }
 
     render(){

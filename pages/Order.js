@@ -24,6 +24,7 @@ export class Order extends Component {
       product:{},
       selectedOption:{},
       selected_products:[],
+      localCart:[],
       product_id:"",
       price:{},
       cart:[], 
@@ -36,7 +37,7 @@ export class Order extends Component {
     }
      this.addToList = this.addToList.bind(this);
      this.handleInputChange = this.handleInputChange.bind(this);
-     this.calculateTotal = this.calculateTotal.bind(this);
+    //  this.calculateTotal = this.calculateTotal.bind(this);
      this.getCart = this.getCart.bind(this);
   }
   calculate = (selectedOption) => {
@@ -51,7 +52,7 @@ export class Order extends Component {
     
   handleInputChange = (event) => {
     this.setState({product: JSON.parse(event.target.value)});
-    console.log(JSON.parse(event.target.value))
+    // console.log(JSON.parse(event.target.value))
 
   }
 
@@ -65,9 +66,10 @@ export class Order extends Component {
 
   async componentDidMount(){
     var products= await  directus.items('products').read()
-
-    this.setState({
+      
+        this.setState({
         products:products.data,
+        product:products.data[0],
     })
     this.getCart();
 }
@@ -78,25 +80,26 @@ async getCart()
       if(localCart)
       {
         const product_ids = localCart.map(e => e['product_id']);
-        console.log(localCart)  
-        if(product_ids.length > 0)
+         
+        
+        if(product_ids.length > 0 && !product_ids.includes(undefined))
         {
                   var selected_products= await  directus.items('products').read(product_ids)
   
                   var array = [selected_products.data].flat()
-            
-                  // var products = this.state.products.filter( function( el ) {
-                  //   return array.indexOf( el ) < 0;
-                  // } );
-                  //var products = this.state.products.filter( ( el ) => array.filter( ( item ) => item.product_id != el.product_id ) );
-                  console.log(products)
-                // alert('');
+                  for(var i=0;i<array.length;i++){
+                    array[i]['quantity'] = localCart.filter(item => 
+                                            item.product_id == array[i].id
+                                          )[0].quantity
+                  }
+           
                   this.setState({
                     selected_products:array,
+                    localCart:localCart
                     //products:products
                 })        
             
-                var total = localCart.map((value,index) => value.quantity * ((selected_products.data[index])?selected_products.data[index].product_price:0))
+                var total = array.map((value,index) => value.quantity * value.product_price )
                 total = total.reduce((a, b) => a + b, 0)
                 this.setState({
                   total:total
@@ -108,24 +111,14 @@ async getCart()
         })  
         }
       }
-      
-      
-    
-      
-
-      // this.$http.post('/api/getCart',{localCart:localCart})
-      // .then(response => {
-      //    this.cart = response.data.cart ;
-      //  });
     }
 
 
-calculateTotal(price) {
-  this.setState({
-    total: this.state.total + price
-  });
-  console.log(this.state.total);
-}
+// calculateTotal(price) {
+//   this.setState({
+//     total: this.state.total + price
+//   });
+// }
 render(){
   // var products = this.state.products.map((product) {
   //   return (
@@ -189,7 +182,9 @@ render(){
            </div>
       <span class="orderSubTitle">Your list</span>
       {this.state.selected_products.map((product,index) => (
-              <CartItem  key={'product'+index} cart={product} getData={this.getCart} />
+              <div>
+              <CartItem  key={product.product_name+"-"+product.quantity} cart={product} getData={this.getCart} />
+              </div>
             ))}
             <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
             <span class="price px-5  pt-4" >{this.state.total} USD</span>

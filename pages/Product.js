@@ -25,7 +25,6 @@ render(){
    <Modal.Body>
 <div class="row">
 
-
       <div class="col-md-6 popUpBottle"> 
       <img src={global.ASSET_URL+product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
          </div> 
