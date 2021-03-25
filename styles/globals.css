@@ -133,11 +133,7 @@ video:focus{
   text-align: center;
   }
   .headerLogo{
-<<<<<<< HEAD
   height:25%; width:25%; 
-=======
-  height:25%; width:25%;
->>>>>>> 81a3be0cb81621e7e5ead49669fb9b988095cdf0
   }
   .navbar-nav{
   display: flex;
