@@ -1,0 +1,363 @@
+body {
+    background: #fff;
+    margin: 0;
+    font-size: 90%;
+    font-family: 'Arimo', sans-serif;
+  }
+  /******FadingTitle******/
+  h1 {
+    font-size: 10vw;
+    top: -35vw;
+    text-shadow: 0 0 3px 4px rgba(0,0,0,0.3);
+    opacity: 0;
+    animation: fade 4s 2s forwards;
+  }
+  h2 {
+    font-weight: 100;
+    font-size: 3vw;
+    top: 20vw;
+    letter-spacing: 0.2vw;
+    opacity: 0;
+  }
+  h2:hover {
+    animation: fade 1s 2s forwards;
+  }
+  #intro {
+    background: linear-gradient(#000, rgba(0,0,0,0.067)), rgba(255,255,255,0.9);
+    background-size: 100% 100%, 100% 100%;
+    background-position: 0 -99vh, 0 0;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    -webkit-background-blend-mode: darken;
+    transition: 1s background-position ease-in-out;
+    margin: 0 auto;
+    width: 100wh;
+    height: 100vh;
+    position: initial;
+    opacity: 0.9;
+  }
+  #intro:hover {
+    background-position: 0 0, 0 0;
+  }
+  #intro h1 {
+    text-align: left;
+    margin: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #000;
+    font-family: inherit;
+    font-size: 5vw;
+  }
+  #intro p {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    color: #fff;
+    font-family: inherit;
+    margin-bottom: 5vh;
+    font-size: 2vw;
+  }
+  #intro a {
+    color: #fff;
+  }
+  #intro input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 0px solid #0f0;
+    border-radius: 2px;
+    color: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0);
+    transition: opacity 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+  #intro input:active {
+    border: 2px solid rgba(255,0,0,0.8);
+    color: #f00;
+    background: rgba(255,255,255,0.1);
+  }
+  #intro input:hover {
+    background: rgba(255,0,0,0.8);
+    color: #fff;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+  #bottomButton {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border: 0px solid #0f0;
+    border-radius: 2px;
+    color: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0);
+    transition: opacity 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+  #intro input:active {
+    border: 2px solid rgba(255,0,0,0.8);
+    color: #f00;
+    background: rgba(255,255,255,0.1);
+  }
+  #intro input:hover {
+    background: rgba(255,0,0,0.8);
+    color: #fff;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+  /*****************************/
+  #overlayCenter {
+    padding-left: 40vw;
+  }
+  #overlayLeft {
+    padding-left: 5vw;
+  }
+  #overlayRight {
+    padding-left: 70vw;
+  }
+  #overlay {
+    display: block;
+    position: relative;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    margin-top: 800px;
+    left: 0;
+  }
+  #overlay h1 {
+    text-align: center;
+    padding-top: 3vw;
+    color: #fff;
+    font-family: inherit;
+    font-size: 2.1vw;
+  }
+  #overlay p {
+    text-align: center;
+    width: 20vw;
+    margin: 0 auto;
+    color: rgba(17,0,0,0.6);
+    font-family: inherit;
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+  }
+  #overlay a {
+    color: #fff;
+  }
+  /*****************************/
+  #clock-container {
+    display: block;
+    position: relative;
+    width: 20vw;
+    overflow: hidden;
+    margin-top: 800px;
+    left: 1vw;
+  }
+  #face {
+    stroke-width: 2px;
+    stroke: #fff;
+  }
+  #hour,
+  #min,
+  #sec {
+    stroke-width: 1px;
+    fill: #333;
+    stroke: #555;
+  }
+  #sec {
+    stroke: #f55;
+  }
+  /**********Pendulum*************/
+  #watch {
+    width: 12vw;
+    height: auto;
+    margin: 0 auto;
+    transform-origin: center top;
+    transform: rotate(-30deg);
+    top: -10px;
+    margin-top: 800px;
+    animation: sway 2.2s infinite alternate ease-in-out;
+  }
+  #watch img.watch {
+    width: 100%;
+    height: auto;
+  }
+  img.seconds {
+    position: absolute;
+    width: 8%;
+    height: auto;
+    bottom: 11.75%;
+    left: 45%;
+    transform-origin: center 72.4%;
+    animation: secondcount 60s infinite linear;
+  }
+  /**********PolaEffect**********/
+  #pola {
+    position: relative;
+    margin-top: 800px;
+    left: 60vw;
+    margin: auto 1.2rem;
+    float: left;
+    border: 1.25vw solid #e3e4d3;
+    border-bottom-width: 2.5vw;
+    -webkit-transition: 3s box-shadow ease-in;
+    -moz-transition: 3s box-shadow ease-in;
+    -o-transition: 3s box-shadow ease-in;
+    transition: 3s box-shadow ease-in;
+    box-shadow: 0 0 10vw 10vw #1d1904 inset, 0 0 0.15vw 0.3vw rgba(0,0,0,0.07);
+    width: 20vw;
+    height: 18.2vw;
+    background-position: center;
+    background-image: url("http://demosthenes.info/assets/images/christine-adams.jpg");
+    background-size: 20vw 20vw;
+    background-repeat: no-repeat;
+    -webkit-filter: sepia(50%);
+    -o-filter: sepia(50%);
+    -ms-filter: sepia(50%);
+    -moz-filter: sepia(50%);
+    filter: sepia(50%);
+  }
+  #pola:hover {
+    box-shadow: 0 0 100px 0 rgba(29,25,4,0.8) inset, 0 0 3px 6px rgba(0,0,0,0.07);
+    -webkit-filter: sepia(20%);
+    -o-filter: sepia(20%);
+    -ms-filter: sepia(20%);
+    -moz-filter: sepia(20%);
+    filter: sepia(20%);
+  }
+  /**********VideoSetup**********/
+  #set-height {
+    display: block;
+    height: 7000px;
+  }
+  #responsiveVideo {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -100;
+  }
+  #wrapperVideo {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  #v0 {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @-moz-keyframes sway {
+    to {
+      transform: rotate(30deg);
+    }
+  }
+  @-webkit-keyframes sway {
+    to {
+      transform: rotate(30deg);
+    }
+  }
+  @-o-keyframes sway {
+    to {
+      transform: rotate(30deg);
+    }
+  }
+  @keyframes sway {
+    to {
+      transform: rotate(30deg);
+    }
+  }
+  @-moz-keyframes fade {
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fade {
+    to {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes fade {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade {
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes widen {
+    to {
+      width: 40%;
+    }
+  }
+  @-webkit-keyframes widen {
+    to {
+      width: 40%;
+    }
+  }
+  @-o-keyframes widen {
+    to {
+      width: 40%;
+    }
+  }
+  @keyframes widen {
+    to {
+      width: 40%;
+    }
+  }
+  @-moz-keyframes secondcount {
+    to {
+      transform: rotate(355deg);
+    }
+  }
+  @-webkit-keyframes secondcount {
+    to {
+      transform: rotate(355deg);
+    }
+  }
+  @-o-keyframes secondcount {
+    to {
+      transform: rotate(355deg);
+    }
+  }
+  @keyframes secondcount {
+    to {
+      transform: rotate(355deg);
+    }
+  }
