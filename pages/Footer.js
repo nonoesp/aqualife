@@ -11,7 +11,7 @@ export default function header(){
           <a href="#about"><li class="footerItem"> About</li></a> 
           <a href="#products"><li class="footerItem"> Products</li></a> 
           <a href="#news"><li class="footerItem"> News</li></a> 
-      <li  class="footerItem"> Get In Touch</li>
+      <li  class="#contact"> Get In Touch</li>
         </ul>
     <ul class="footerNav"> 
      <li class="footerItem" > <svg xmlns="http://www.w3.org/2000/svg" width="12.472" height="24.942" viewBox="0 0 12.472 24.942"><path d="M16.382,4.141h2.277V.176A29.4,29.4,0,0,0,15.342,0C12.059,0,9.81,2.065,9.81,5.86V9.353H6.187v4.433H9.81V24.942h4.442V13.788h3.476l.552-4.433H14.25V6.3c0-1.281.346-2.159,2.131-2.159Z" transform="translate(-6.187)" fill="#ea1c2d"/></svg> </li>

@@ -21,7 +21,7 @@ async componentDidMount(){
         return (
             <div class="row" id="map"> 
             <div class="col-md-6" > 
-             <p class="title"> Get In Touch </p>
+             <p class="title" id="contact"> Get In Touch </p>
                <div class="aboutItems">
                <ul class="px-0">
                    <div class="py-4">

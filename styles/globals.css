@@ -360,10 +360,15 @@ top: -60%;
   color:grey;
   font-size:14px;
   }
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
   #news .btn-primary{
     border:none !important;
     background-color: transparent !important;
     font-family: "MontserratMedium";
+    padding-left:0px;
   } 
   #news .btn-toolbar{
     justify-content: end !important;
@@ -461,16 +466,23 @@ outline:none;
       max-width: 1200px;   padding-left: 15px;
   }
   }
+  @media (max-width:768px) and (max-width:941px) {
 
+          #responsiveVideo{
+            display:none !important;
+          }
+          #set-height{
+            height: 0px !important;
+          }
+  }
+ 
   @media (min-width:1000px){
     .mobileVideo{
       display:none !important;
     }
   }
   @media (max-width: 940px){
-    .mobileVideo{
-      display:block !important;
-    }
+  
     .body-container{
       top:unset !important;
     }
@@ -478,7 +490,8 @@ outline:none;
   }
   @media (max-width: 600px){
     .centeredImage {
-       width:100%; height:100%;
+      width: 100%;
+      height: 80%;
     }
     .slick-next {
       right: 350px !important;
@@ -488,6 +501,9 @@ outline:none;
     }
     #productDetail .bottleDetail{
       left: 40%;
+    }
+    #products{
+      padding-top:0px !important;
     }
     .bottleDetail{
       width:50%;

@@ -39,7 +39,7 @@ function Header() {
             <div  class="logoPosition"> 
             <Nav.Link > <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link>
             </div>
-            <Nav.Link href="#link">Get In Touch</Nav.Link>
+            <Nav.Link href="#contact">Get In Touch</Nav.Link>
           </Nav>
         <div class="socialMedia">
           <Nav.Link>

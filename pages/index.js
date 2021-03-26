@@ -225,8 +225,9 @@ async componentDidMount(){
                         <p class="subDesc">{news.brief}</p>
                       </div>
                       <div>
-                        <Button> 
+                        <Button class="pl-0"> 
                         <Button 
+                         class="pl-0"
                             onClick={()=>
                             this.setState({addModalsShowNews: true})}> 
                             <p class="readMore"> Read More</p>
