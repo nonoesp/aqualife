@@ -368,7 +368,11 @@ top: -60%;
     border:none !important;
     background-color: transparent !important;
     font-family: "MontserratMedium";
+<<<<<<< HEAD
     padding-left:0px;
+=======
+     padding-left:0px;
+>>>>>>> 40115aef91172dcb92b074db87749269388bc4b3
   } 
   #news .btn-toolbar{
     justify-content: end !important;
