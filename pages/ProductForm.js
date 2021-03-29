@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import DatePicker from 'react-datepicker';
 import {Form} from 'react-bootstrap';
-
-
+import axios from 'axios';
 
 export class ProductForm extends Component {
     constructor(props){
@@ -14,11 +13,17 @@ export class ProductForm extends Component {
       
     
         super(props);
-           this.state={startDate:new Date()};
+           this.state={startDate:new Date(),
+           name: '',
+           email: '',
+           phone: '',
+           message: '',
+           sent:false,
+          };
           
        
           this.handleChange = this.handleChange.bind(this);
-          this.onFormSubmit = this.onFormSubmit.bind(this);
+          // this.handleSubmit = this.handleSubmit.bind(this);
 
         }
         handleChange(date) {
@@ -27,47 +32,47 @@ export class ProductForm extends Component {
             })
           }
           
-          onFormSubmit(e) {
-            e.preventDefault();
-            // console.log(this.state.startDate)
+        // handleSubmit(e) {
+        //     e.preventDefault()
+          
+        //     let data = {
+        //      name:this.state.name,
+        //      email:this.state.email,
+        //      phone:this.state.phone,
+        //      message:this.state.message
+        //      }
+        // axios.post('api/forma', data)
+        //   .then(res=>this.setState({
+        //     sent:true,
+        //   },this.resetForm())
+        //   }).catch(()=>{
+        //     console.log('message not sent');
+        //   })
+        //  }
+        // }
+      resetForm() {
+            this.setState({
+              name: '',
+              email: '',
+              phone: '',
+              message: '',
+            })
           }
-    submit(e) {
-            e.preventDefault();
-            this.props.handleProduct(product);
-          }
-
-
-          submit(e) {
-            e.preventDefault();
-            var product = {
-              name: this.name,
-              price: this.price,
-             
-            };
-            console.log(this.refs.name.value, this.refs.price.value);
-            this.props.handleProduct(product);
-            this.refs.name.value = "";
-            this.refs.price.value = 0;
-            this.refs.info.value = "";
-          }
-
-
-
     render(){
 return(
 <div> 
-<Form class="pt-4" onSubmit={this.submit.bind(this)}>
+<Form class="pt-4" >
 <Form.Group controlId="exampleForm.ControlInput1">
-    <Form.Control type="name" placeholder="Name" />
+    <Form.Control type="name"  name="name" value={this.state.name} onChange={this.handleChange.bind(this, 'name')} placeholder="Name" />
   </Form.Group>
     <Form.Group controlId="exampleForm.ControlInput2">
-      <Form.Control type="email" placeholder="Email" />
+      <Form.Control type="email" name="email" value={this.state.email} onChange={this.handleChange.bind(this, 'email')} placeholder="Email" />
     </Form.Group>
         <Form.Group controlId="exampleForm.ControlInput3">
-          <Form.Control type="phone" placeholder="Phone Number" />
+          <Form.Control type="phone"  name="phone" value={this.state.phone} onChange={this.handleChange.bind(this, 'phone')} placeholder="Phone Number" />
         </Form.Group>
      <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Control as="textarea" placeholder="Address, Builling Detail" rows={3} />
+          <Form.Control as="textarea" name="message" value={this.state.textarea} onChange={this.handleChange.bind(this, 'textarea')} placeholder="Address, Builling Detail" rows={3} />
         </Form.Group>
 
             <span class="orderSubTitle"> Preffered Delivery Time</span>

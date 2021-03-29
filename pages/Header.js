@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import {useSpring, animated} from "react-spring";
+import "../myscript.js";
 
 
 function Header() {
@@ -16,22 +17,22 @@ function Header() {
    <div> 
   <div class= "slideDownAnimation"> 
     
-  {/* <animated.div 
+  <animated.div 
     keyframes={[
        'transform: rotateX(0) rotateY(0) rotateZ(0)',
        'transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)',
      ]}
   style={props}>
-  <p >Scroll for More</p>
-  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 108.5 56.056"><g transform="translate(0 -117.272)"><path d="M104.441,117.985l-50.212,49.7-50.211-49.7a2.376,2.376,0,0,0-3.335.057,2.317,2.317,0,0,0,0,3.243l51.881,51.346a2.376,2.376,0,0,0,3.335,0l51.881-51.346a2.317,2.317,0,0,0,.058-3.3,2.376,2.376,0,0,0-3.335-.057l-.058.057Z" fill="#7db8c5"/><path d="M54.212,173.328a2.37,2.37,0,0,1-1.67-.682L.662,121.291a2.318,2.318,0,0,1,.058-3.3,2.376,2.376,0,0,1,3.276,0l50.216,49.7,50.211-49.707a2.376,2.376,0,0,1,3.335-.057,2.318,2.318,0,0,1,.058,3.3l-.058.057L55.877,172.642A2.372,2.372,0,0,1,54.212,173.328Z" transform="translate(0 0)" fill="#7db8c5"/></g></svg>
-  </animated.div> */}
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 248 512"><g id="down-arrow" transform="translate(-132)"><g id="Group_165" data-name="Group 165"><path id="Path_152" data-name="Path 152" d="M374.108,373.328a20,20,0,0,0-28.284.067L276,443.557V20a20,20,0,0,0-40,0V443.558l-69.824-70.164a20,20,0,0,0-28.352,28.218l104,104.5c.006.007.013.012.019.018a20.017,20.017,0,0,0,28.314,0c.006-.007.013-.012.019-.018l104-104.5A20,20,0,0,0,374.108,373.328Z" fill="#dc3545"/></g></g>
+</svg>
+  </animated.div>
   </div>
- <div class="headerPosition sticky" id="myHeader">
+ <div class="headerPosition" id="myHeader">
         <Navbar  expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav >
-            <Nav.Link href="#one">Home</Nav.Link>
+            <Nav.Link href="#v0">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#products">Products</Nav.Link>
             <Nav.Link href="#news">News</Nav.Link>

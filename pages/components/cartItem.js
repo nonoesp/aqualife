@@ -15,6 +15,7 @@ export class CartItem extends Component {
      this.state={
         cartModel:[],
         cart:(props.cart)?props.cart:{},
+        totalCurr:0,
     }
      this.removeCart = this.removeCart.bind(this);
      this.decFromCart = this.decFromCart.bind(this);
@@ -48,6 +49,12 @@ export class CartItem extends Component {
     addToCart(){
               this.state.cartModel.addTocart();
               this.props.getData();
+          }
+    total(){
+        if(this.state.cartModel=null){
+            this.setState.totalCurr =0;
+        }
+        this.props.getData();
           }
 
     render(){

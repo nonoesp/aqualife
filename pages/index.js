@@ -168,10 +168,13 @@ async componentDidMount(){
                         </Button>
                    
                         <div class="bottlePosition pt-4">
-                            {category.products.map((product,index)=> (
-                            <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} title={product.products_id.product_name} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
-                            )) }
-                           
+                            {category.products.map((product,index)=> {
+                              if(product.products_id)
+                              {
+                                  return(<img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} title={product.products_id.product_name} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />)
+                              }
+                            
+                              }) }
                         </div>
                       </div>
                   </div>

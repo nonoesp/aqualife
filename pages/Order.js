@@ -91,6 +91,7 @@ async getCart()
                     array[i]['quantity'] = localCart.filter(item => 
                                             item.product_id == array[i].id
                                           )[0].quantity
+                                          console.log(array);
                   }
            
                   this.setState({

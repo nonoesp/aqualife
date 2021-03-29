@@ -27,6 +27,9 @@ a {
   justify-content: center !important;
     align-items: baseline !important;
 }
+.nav-link{
+  font-family: "MontserratRegular";
+}
 h6, span:hover{
   cursor:pointer;
 }
@@ -148,7 +151,7 @@ video:focus{
   }
   .scroll{
   font-size:15px;
-  color:#7DB8C5; text-align: center;
+  color:#7ea7c2; text-align: center;
   }
   @keyframes wobble {
   0%{
@@ -190,7 +193,7 @@ video:focus{
   }
   .title{
   font-size:40px;
-  color:#7DB8C5;
+  color:#7ea7c2;
   font-family:'PlayfairDisplay';
   }
   .desc{
@@ -213,11 +216,11 @@ video:focus{
     top: -3%;
     position: absolute;
     z-index: 1;
-    left: 82%;
+    left:60%;
   }
   .bottomLeft{
     width: 30%;
-    top: 90%;
+    top: 70%;
     position: absolute;
     z-index: 1;
     left: -8%;
@@ -225,12 +228,12 @@ video:focus{
 .imageSize{
   width: 40%;
   position: absolute;
-  top: 88%;
-  right: -20%;
+  top:70%;
+  right: -0%;
   z-index: 1;
   }
   .centeredImage{
-    position: relative;width:100%;height:100%;
+    position: relative;
   }
   .contentPosition{
   color: #1a1a1a;
@@ -272,9 +275,9 @@ video:focus{
   align-items: center !important;
   }
   .btn-primary{
-  background-color: #7DB8C5 !important;
+  background-color: #7ea7c2 !important;
   color: white !important;
-  border: 1px solid #7DB8C5 !important; font-family:"MontserratMedium";
+  border: 1px solid #7ea7c2 !important; font-family:"MontserratMedium";
   }
   .category{
   line-height:0.3em;
@@ -322,7 +325,7 @@ video:focus{
   height: 100%;
  }
   .slick-prev:before, .slick-next:before{
-    color:#7DB8C5 !important;
+    color:#7ea7c2 !important;
   }
   .slick-prev, .slick-next{
   top:30px !important;
@@ -338,9 +341,6 @@ video:focus{
   width:90%;
   /* height:100%; */
   object-fit: contain;
-  }
-  #products{
-    padding-top:100px;
   }
   .body-container{
     background: white;
@@ -364,6 +364,13 @@ top: -60%;
     width: 100%;
     height: 100%;
   }
+  #news .modal-header{
+    padding-top: 10px !important;
+    padding-right: 15px !important;
+    padding-bottom:0px !important;
+    padding-left:0px !important;
+
+  }
   #news .btn-primary{
     border:none !important;
     background-color: transparent !important;
@@ -375,7 +382,10 @@ top: -60%;
     align-items: center !important;
   }
   .readMore{
-  font-size:15px; color:#7DB8C5; 
+  font-size:15px; color:white; 
+  background-color: #7ea7c2;
+  border-radius: 10px;
+  padding: 10px;
   }
   .category, .readMore,.subDesc {
   padding-top:20px;
@@ -391,7 +401,7 @@ top: -60%;
   font-size:15px; font-family: "MontserratBold";
   }
   .orderSubTitle{
-  font-size:15px; color:#7DB8C5;
+  font-size:15px; color:#7ea7c2;
   }
   #datePicker input{
   width:150% !important; height: 37px !important; border-radius:10px;border: 1px solid #ced4da;outline:none;    color: #495057;
@@ -400,9 +410,9 @@ top: -60%;
   border-bottom:none !important;
   }
   .addBtn {
-  border:1px solid #7DB8C5;
+  border:1px solid #7ea7c2;
   color:white;
-  background-color: #7DB8C5;
+  background-color: #7ea7c2;
   border-radius:30px; text-align: center;
   }
   .addBtn button{
@@ -420,17 +430,17 @@ top: -60%;
   display: flex; align-items: center; 
   }
   .list img{
-  border:1px solid #7DB8C5;
+  border:1px solid #7ea7c2;
   border-radius:15px; width:15%; height:15%;
   }
   .list .price{
-  font-size:15px; color:#7DB8C5; padding-left:70px;
+  font-size:15px; color:#7ea7c2; padding-left:70px;
   }
   .qty button{
-  border-radius:5px; border:1px solid #7DB8C5; color:white; background-color: #7DB8C5;
+  border-radius:5px; border:1px solid #7ea7c2; color:white; background-color: #7ea7c2;
   }
   .inputne{
-width:15%; border:1px solid #7DB8C5;text-align: center;
+width:15%; border:1px solid #7ea7c2;text-align: center;
   }
   .inputne:focus{
 outline:none;
@@ -450,17 +460,6 @@ outline:none;
   padding:10px;
   color:grey; cursor:pointer;
   }
-  @media (max-width: 1440px){
-    .bottomLeft{
-      display:none;
-    }
-    .imageSize{
-      display:none;
-    }
-    .topRight{
-      display:none;
-    }
-    }
   @media (min-width: 1200px){
   .contentModule {
       max-width: 1200px;   padding-left: 15px;
@@ -474,6 +473,15 @@ outline:none;
           #set-height{
             height: 0px !important;
           }
+          .bottomLeft{
+            display:none;
+          }
+          .imageSize{
+            display:none;
+          }
+          .topRight{
+            display:none;
+          }
   }
  
   @media (min-width:1000px){
@@ -485,6 +493,12 @@ outline:none;
   
     .body-container{
       top:unset !important;
+    }
+    .leftArrow svg{
+      width:40%;height:40%;
+    }
+    .rightArrow svg{
+      width:40%;height:40%;
     }
     
   }
