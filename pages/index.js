@@ -92,7 +92,9 @@ async componentDidMount(){
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      dots: true,
+      
     };
 
     return (
@@ -201,7 +203,7 @@ async componentDidMount(){
                 onHide={addModalsClose}
                 />
                 </section>
-                <div class="Arrow">
+                <div class="Arrow ">
                 <div class="button" onClick={this.next} class="rightArrow">
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 238.926 443.519">
                           <g id="left-arrow" transform="translate(341.224 443.52) rotate(-180)">

@@ -114,7 +114,6 @@ video:focus{
   }
 .Arrow{
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
   .rightArrow {
@@ -126,7 +125,7 @@ video:focus{
   .leftArrow {
     position: absolute;
     cursor: pointer;
-    transform: translateX(700%);
+    transform: translateX(800%);
   }
   .add{
     border-top-right-radius: 0px !important;
@@ -247,6 +246,9 @@ video:focus{
   .navLinkConnect{
   padding: .5rem 1rem;
   }
+  #products{
+    background-image:url("../public/images/bg.png") ;
+  }
   #products   .title ,#about .title, #news .title, #map .title{
     color:#7ea7c2;
   }
@@ -366,11 +368,11 @@ video:focus{
 .bottlePosition:hover{
   cursor:pointer;
 }
+
 .bottlePosition{
       display:flex;
       justify-content: space-evenly;
       align-items: center;
-      background-image:url("../public/images/bg.png") ;
   }
   .bottle0, .bottle1,.bottle2,.bottle3{
     width: 100%;
@@ -551,6 +553,20 @@ outline:none;
   .footerItem{
   padding:10px;
   color:grey; cursor:pointer;
+  }
+  @media(max-width:1099px){
+    .Arrow{
+      display: none;
+    }
+    .bottle0, .bottle1,.bottle2,.bottle3{
+      width: 100%;
+    }
+    .bottle2{
+      padding: 0px;
+    }
+    .bottle0,.bottle1{
+      padding: 0px;
+    }
   }
   @media (min-width: 1200px){
   .contentModule {
