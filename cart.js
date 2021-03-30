@@ -28,20 +28,22 @@ export default class Cart {
          
            this.checkCart();
            this.quantity++;
-           this.saveCart();
+           this.saveCart(false);
       }
       
       decFromCart()
       {
           this.checkCart();
+          var is_deleted = false;
           if(this.quantity > 1)
           {
               this.quantity--;
           }
           else{
               this.removeCart();
+              is_deleted= true;
           }
-          this.saveCart();
+          this.saveCart(is_deleted);
           
       }
       
@@ -56,7 +58,7 @@ export default class Cart {
       {
           this.checkCart();
           this.removeCart();
-          this.saveCart();
+          this.saveCart(true);
       }
       
 
@@ -65,10 +67,13 @@ export default class Cart {
           return this;
       }
       
-      saveCart()
+      saveCart(is_deleted)
       {
            
-          if(this.cartArr[this.index])
+        // console.log(this.quantity);
+        // console.log(this.index);
+       
+          if(this.cartArr[this.index] && !is_deleted)
           {
               this.cartArr[this.index].quantity = this.quantity;
           }
@@ -87,7 +92,7 @@ export default class Cart {
               };
             };
     
-    // console.log(this.cartArr);
+    //  console.log(this.cartArr);
         
           localStorage.setItem("cart", JSON.stringify(this.cartArr, getCircularReplacer()));
 

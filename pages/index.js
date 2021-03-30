@@ -45,7 +45,7 @@ class index extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
 
-    this.state={deps:[],products:[],product:{},categories:[],category:{},news:[],addModalsShow: false, addModalsShowNews:false, addModalsShowProduct: false,cart:[],isLoading:true}
+    this.state={deps:[],products:[],product:{},categories:[],category:{},categoryItem:{},news:[],addModalsShow: false, addModalsShowNews:false, addModalsShowProduct: false,cart:[],isLoading:true}
 
     this.onScroll = this.onScroll.bind(this);
 
@@ -57,17 +57,18 @@ previous() {
   this.carousel.slickPrev();
 }
 async componentDidMount(){
-
       var prod= await  directus.items('products').read()
       var news = await  directus.items('news').read()
      
       var cat = await  directus.items('categories').read({ fields: ['*.*.*'] })
+      // var catItem = await  directus.items('categories').read()
       //console.log(cat.data[0].products.products_id);
       this.setState({
           products:prod.data,
           categories:cat.data,
           news:news.data,
-          isLoading:false
+          isLoading:false,
+          categoryItem:cat.data[0],
       })
   }
 
@@ -152,40 +153,55 @@ async componentDidMount(){
           </section>
           */}
           <section id="products" >
-            <div class="App pt-5">
-                {this.state.product?<Product show={this.state.addModalsShowProduct} product={(this.state.product)?this.state.product:{}} onHide={addModalsCloseProduct}/>:null}
-                <Carousel ref={c =>
-                  (this.carousel = c)} {...settings}  >
-                  {this.state.categories.map((category,index)=> (
-                  <div key={'category'+index}>
-                      <h3 class="title">{category.title}</h3>
-                      <p class="productBrief">{category.name}</p>
-                      <p class="description"> {category.description}</p>
-                      <div>
-                        <Button cart={cart}
+            <div class="contentModule pt-5">
+              <div> 
+                     <h3 class="title">{this.state.categoryItem.title}</h3>
+                      
+                      <p class=" col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
+                      <Button cart={cart}
                             onClick={()=> this.setState({addModalsShow: true})}> 
-                        Place order 
+                        PLACE ORDER
                         </Button>
-                   
+              </div>
+                {this.state.product?<Product show={this.state.addModalsShowProduct} product={(this.state.product)?this.state.product:{}} onHide={addModalsCloseProduct}/>:null}
+                <Carousel adaptiveHeight={true}  ref={c =>
+                  (this.carousel = c)} {...settings} >
+                  {this.state.categories.map((category,index)=> (
+                  <div key={'category'+index} class="position">
+                    
                         <div class="bottlePosition pt-4">
+                         
                             {category.products.map((product,index)=> {
                               if(product.products_id)
                               {
-                                  return(<img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} title={product.products_id.product_name} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />)
+                                  return(
+                              <div class="col-4 mx-auto content"> 
+                                  <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
+                                  <div class="middle"> 
+                                  <div class="text pt-5">{product.products_id.product_name}</div>
+                                  </div>
+                                  </div>
+                                  )
+                                  
                               }
-                            
+                             
                               }) }
                         </div>
-                      </div>
+                        <div class="pt-5"> 
+                        <p class="py-2 px-4 productBrief">{category.name}</p> </div>
+           
                   </div>
                   ))}
+            
                 </Carousel>
+          <section  id="order"> 
                 <Order
                 show={this.state.addModalsShow}
                 //if its true the product will be show if it's false not show
                 onHide={addModalsClose}
                 />
-                <div>
+                </section>
+                <div class="Arrow">
                 <div class="button" onClick={this.next} class="rightArrow">
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 238.926 443.519">
                           <g id="left-arrow" transform="translate(341.224 443.52) rotate(-180)">
@@ -196,7 +212,8 @@ async componentDidMount(){
                         </svg>
 
                   </div>
-                  <div class="button" onClick={this.previous} class="leftArrow">
+        
+         <div class="button" onClick={this.previous} class="leftArrow">
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 238.926 443.519">
                         <g id="left-arrow" transform="translate(-102.298 0)">
                           <g id="Group_1" data-name="Group 1">
@@ -211,7 +228,7 @@ async componentDidMount(){
           </section>
           <section id="news">
             <div class="App">
-                <p class="title"> Latest News and Release</p>
+                <p class="title pt-5"> Latest News and Release</p>
             </div>
             <div class="contentModule">
                 <div class="row py-5">

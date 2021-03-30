@@ -91,7 +91,7 @@ async getCart()
                     array[i]['quantity'] = localCart.filter(item => 
                                             item.product_id == array[i].id
                                           )[0].quantity
-                                          console.log(array);
+                                         
                   }
            
                   this.setState({
@@ -104,11 +104,14 @@ async getCart()
                 total = total.reduce((a, b) => a + b, 0)
                 this.setState({
                   total:total
+               
                 })
+           
         }
         else{
           this.setState({
-            selected_products:[]
+            selected_products:[],
+            total:0
         })  
         }
       }
