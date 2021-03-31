@@ -189,7 +189,7 @@ async componentDidMount(){
                              
                               }) }
                         </div>
-                        <div class="pt-5"> 
+                        <div class="categorySection"> 
                         <p class="py-2 px-4 productBrief">{category.name}</p> </div>
            
                   </div>

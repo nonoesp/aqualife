@@ -69,6 +69,10 @@ li{
   font-family:MontserratRegular;
   src: url('../fonts/Montserrat-Regular.ttf');
 }
+@font-face {
+  font-family:GeorgiaSBold;
+  src: url('../fonts/georgia-pro-semibold-italic.ttf');
+}
 .slick-arrow{
   display:none !important;
 }
@@ -255,7 +259,7 @@ video:focus{
   .title{
   font-size:40px;
   color:white;
-  font-family:'PlayfairDisplay';
+  font-family:'GeorgiaSBold';
   }
   .desc{
   font-family:"PoppinsReg";
@@ -401,7 +405,12 @@ video:focus{
   .slick-next {
   right: 400px !important;
   }
-
+  .categorySection{
+    padding-top:75px;
+  }
+.slick-dots{
+  bottom: 65px !important;
+}
   .bottleDetail{
   width:90%;
   /* height:100%; */
