@@ -20,7 +20,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav >
-            <Nav.Link href="#wrapperVideo">Home</Nav.Link>
+            <Nav.Link href="#video">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#products">Products</Nav.Link>
             <Nav.Link href="#news">News</Nav.Link>
@@ -28,7 +28,7 @@ function Header() {
             <div  class="logoPosition"> 
             <Nav.Link > <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link>
             </div>
-            <Nav.Link href="#contact">Get In Touch</Nav.Link>
+            <Nav.Link href="#contactSection">Get In Touch</Nav.Link>
           </Nav>
         <div class="socialMedia">
           <Nav.Link>

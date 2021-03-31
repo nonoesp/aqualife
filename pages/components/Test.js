@@ -35,7 +35,7 @@ class Test extends Component {
 
 render(){
 return(
-    <div >
+    <section id="video">
             <div id="responsiveVideo">
               <div id="wrapperVideo">
                 <video id="v0"  tabindex="0" autobuffer preload>
@@ -62,7 +62,7 @@ return(
               <a href="#about" class='icon-scroll'>  </a>
               </div>
           
-    </div>
+    </section>
 )
     }
   }

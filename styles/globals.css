@@ -249,6 +249,9 @@ video:focus{
   .navLinkConnect{
   padding: .5rem 1rem;
   }
+  #products, #news,#about,#contact{
+     padding-top:80px;
+  }
   #products{
     background-image:url("../public/images/bg.png") ;
   }
@@ -381,10 +384,10 @@ video:focus{
     width: 100%;
   }
   .bottle2{
-    padding: 0px 75px;
+    padding: 0px 120px;
   }
   .bottle0,.bottle1{
-    padding: 0px 100px;
+    padding: 0px 130px;
   }
   .popUpBottle{
     display: flex; justify-content: center; align-items: center;
@@ -657,7 +660,10 @@ outline:none;
         align-items: center;
     }
     .bottleCategory{
-      font-size: 14px;
+      font-size: 14px;color:white;font-family: 'MontserratBold';padding-left:30px;
+    }
+    .specification{
+      padding-top:10px;
     }
     .contentModule {
     padding-left: 15px;

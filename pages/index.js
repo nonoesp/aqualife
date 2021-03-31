@@ -266,9 +266,9 @@ async componentDidMount(){
                 </div>
             </div>
           </section>
-          <div class="contentModule">
+          <section id="contactSection" class="contentModule"> 
             <Contact/>
-          </div>
+          </section>
        
           <div class="App">
             <Footer/>
