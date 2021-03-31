@@ -123,12 +123,12 @@ video:focus{
   .rightArrow {
     position: absolute;
     cursor: pointer;
-    transform: translateX(1400%);
+    transform: translateX(2400%);
   }
   .leftArrow {
     position: absolute;
     cursor: pointer;
-    transform: translateX(800%);
+    transform: translateX(1400%);
   }
   .add{
     border-top-right-radius: 0px !important;
@@ -405,7 +405,7 @@ video:focus{
   right: 400px !important;
   }
   .categorySection{
-    padding-top:75px;
+    padding-top:90px;
   }
 .slick-dots{
   bottom: 65px !important;

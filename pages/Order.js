@@ -190,7 +190,7 @@ render(){
         {
           return (<CartItem  key={product.product_name+"-"+product.quantity} cart={product} getData={this.getCart} />)
         }
-              
+         else return null;
       })}
             <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
             <span class="price px-5  pt-4" >{this.state.total} USD</span>
