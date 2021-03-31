@@ -180,7 +180,7 @@ async componentDidMount(){
                               <div class="col-4 mx-auto content"> 
                                   <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
                                   <div class="middle"> 
-                                  <div class="text pt-5">{product.products_id.product_name}</div>
+                                  <div class="text pt-5">{product.products_id.size}</div>
                                   </div>
                                   </div>
                                   )

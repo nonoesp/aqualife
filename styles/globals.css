@@ -122,7 +122,6 @@ video:focus{
 }
   .rightArrow {
     position: absolute;
-    transform: translateY(-50%);
     cursor: pointer;
     transform: translateX(1400%);
   }

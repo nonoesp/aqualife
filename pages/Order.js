@@ -185,11 +185,13 @@ render(){
 
            </div>
       <span class="orderSubTitle">Your list</span>
-      {this.state.selected_products.map((product,index) => (
-              <div>
-              <CartItem  key={product.product_name+"-"+product.quantity} cart={product} getData={this.getCart} />
-              </div>
-            ))}
+      {this.state.selected_products.map((product,index) => {
+        if(product.quantity > 0)
+        {
+          return (<CartItem  key={product.product_name+"-"+product.quantity} cart={product} getData={this.getCart} />)
+        }
+              
+      })}
             <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
             <span class="price px-5  pt-4" >{this.state.total} USD</span>
             </div>
