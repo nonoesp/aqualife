@@ -39,6 +39,7 @@ export class Order extends Component {
      this.handleInputChange = this.handleInputChange.bind(this);
     //  this.calculateTotal = this.calculateTotal.bind(this);
      this.getCart = this.getCart.bind(this);
+     this.removeCart = this.removeCart.bind(this);
   }
   calculate = (selectedOption) => {
     return product.quantity * product.price;
@@ -55,13 +56,14 @@ export class Order extends Component {
     // console.log(JSON.parse(event.target.value))
 
   }
-
+  removeCart(){
+    this.cartArr.splice(this.index, 1);
+  }
   addToList() {
     // console.log(this.state.product.id)
     var cart = new Cart(this.state.product.id);
     cart.addTocart();
     this.getCart();
-
   }
 
   async componentDidMount(){
@@ -190,7 +192,7 @@ render(){
         {
           return (<CartItem  key={product.product_name+"-"+product.quantity} cart={product} getData={this.getCart} />)
         }
-         else return null;
+         else this.removeCart();
       })}
             <div class="row align-items-center "> <p class="total  pt-5">Total (Inc.VAT): </p>
             <span class="price px-5  pt-4" >{this.state.total} USD</span>
