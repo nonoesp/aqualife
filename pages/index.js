@@ -205,25 +205,25 @@ async componentDidMount(){
                 </section>
                 <div class="Arrow ">
                 <div class="button" onClick={this.next} class="rightArrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 238.926 443.519">
+                <a href="#products">  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 238.926 443.519">
                           <g id="left-arrow" transform="translate(341.224 443.52) rotate(-180)">
                             <g id="Group_1" data-name="Group 1">
                               <path id="Path_1" data-name="Path 1" d="M143.492,221.863,336.226,29.129A17.064,17.064,0,0,0,312.094,5l-204.8,204.8a17.067,17.067,0,0,0,0,24.132l204.8,204.8A17.066,17.066,0,0,0,336.226,414.6Z" fill="#7db8c5"/>
                             </g>
                           </g>
                         </svg>
-
+                        </a> 
                   </div>
         
          <div class="button" onClick={this.previous} class="leftArrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 238.926 443.519">
+         <a href="#products">  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 238.926 443.519">
                         <g id="left-arrow" transform="translate(-102.298 0)">
                           <g id="Group_1" data-name="Group 1">
                             <path id="Path_1" data-name="Path 1" d="M143.492,221.863,336.226,29.129A17.064,17.064,0,0,0,312.094,5l-204.8,204.8a17.067,17.067,0,0,0,0,24.132l204.8,204.8A17.066,17.066,0,0,0,336.226,414.6Z" fill="#7db8c5"/>
                           </g>
                         </g>
                       </svg>
-
+                      </a> 
                   </div>
                 </div>
             </div>
