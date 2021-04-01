@@ -7,7 +7,7 @@ export default function header(){
         <div class="bg-light App">
         <img src='../images/footer-logo.png' class="logoFooter" alt="logo" />
         <ul class="footerNav">
-        <a href="#v0"><li class="footerItem"> Home</li></a> 
+        <a href="#video"><li class="footerItem"> Home</li></a> 
           <a href="#about"><li class="footerItem"> About</li></a> 
           <a href="#products"><li class="footerItem"> Products</li></a> 
           <a href="#news"><li class="footerItem"> News</li></a> 
