@@ -173,15 +173,15 @@ async componentDidMount(){
                     
                         <div class="bottlePosition pt-4">
                          
-                            {category.products.map((product,index)=> {
+                            {category.products.map((product,index)=> {  
                               if(product.products_id)
                               {
                                   return(
-                              <div class="col-4 mx-auto content"> 
-                                  <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
-                                  <div class="middle"> 
-                                  <div class="text pt-5">{product.products_id.size}</div>
-                                  </div>
+                                  <div class="col-4 mx-auto content"> 
+                                    <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
+                                    <div class="middle"> 
+                                      <div class="text pt-5">{product.products_id.size}</div>
+                                    </div>
                                   </div>
                                   )
                                   
@@ -233,12 +233,12 @@ async componentDidMount(){
                 <p class="title pt-5"> Latest News and Release</p>
             </div>
             <div class="contentModule">
-                <div class="row py-5">
+                <div class="row pt-5">
                   {this.state.news.map((news,index) => (
                   <div class="col-md-4" key={'news'+index}>
                       <img src={global.ASSET_URL+news.image+'?key=system-medium-contain'} class="appLogo" alt="logo" />
                       {/* <img src={'http://aqualifecms.businessexchange.me/assets/'+news.image+'?key=system-medium-contain'} class="appLogo" alt="logo" /> */}
-                      <div >
+                      <div class="pt-4">
                         <div class="category">
                             <p class="categoryTitle">{news.category} </p>
                             <p class="created">{news.date}  </p>

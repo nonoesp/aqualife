@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import {Form} from 'react-bootstrap';
 import axios from 'axios';
+import Notifications from 'react-notify-toast'
+import DirectusSDK from '@directus/sdk-js';
+import '../global.js';
+// import sendpulse from "sendpulse-api";
 
-export class ProductForm extends Component {
+class ProductForm extends Component {
     constructor(props){
 
         // this.product_id = product_id;
@@ -17,62 +21,84 @@ export class ProductForm extends Component {
            name: '',
            email: '',
            phone: '',
+           address:'',
            message: '',
            sent:false,
+           date:'',
+           time: 'am',
+       
           };
           
        
           this.handleChange = this.handleChange.bind(this);
+          // this.getData=this.getData.bind(this);
           // this.handleSubmit = this.handleSubmit.bind(this);
+          this.handleChangeTime = this.handleChangeTime.bind(this);
 
         }
-        handleChange(date) {
+      handleChange(date) {
             this.setState({
               startDate: date
             })
           }
-          
-        // handleSubmit(e) {
-        //     e.preventDefault()
-          
-        //     let data = {
-        //      name:this.state.name,
-        //      email:this.state.email,
-        //      phone:this.state.phone,
-        //      message:this.state.message
-        //      }
-        // axios.post('api/forma', data)
-        //   .then(res=>this.setState({
-        //     sent:true,
-        //   },this.resetForm())
-        //   }).catch(()=>{
-        //     console.log('message not sent');
-        //   })
-        //  }
-        // }
-      resetForm() {
+      handleName=(e)=>{
+        
+        this.setState({
+          name:e.target.value
+        })
+      }
+      handleEmail=(e)=>{
+        console.log(e.target.value)
+        this.setState({
+          email:e.target.value
+        })
+      }
+      
+      handlePhone=(e)=>{
+        this.setState({
+          phone:e.target.value
+        })
+      }
+   
+      handleMessage=(e)=>{
+        this.setState({
+          message:e.target.value
+        })
+      }
+    handleChangeTime(e) {
+          this.setState({
+            time:e.target.value
+          });
+        }
+    resetForm=()=> {
             this.setState({
               name: '',
               email: '',
               phone: '',
-              message: '',
+              message: ''
             })
+        setTimeout(() =>{
+              this.setState({
+                  sent:false,
+              })
+            },3000)
           }
+
     render(){
 return(
 <div> 
-<Form class="pt-4" >
+
 <Form.Group controlId="exampleForm.ControlInput1">
-    <Form.Control type="name"  name="name" value={this.state.name} onChange={this.handleChange.bind(this, 'name')} placeholder="Name" />
+    <Form.Control type="text"  name="name" value={this.state.name} onChange={this.handleName} placeholder="Name" required/>
   </Form.Group>
     <Form.Group controlId="exampleForm.ControlInput2">
-      <Form.Control type="email" name="email" value={this.state.email} onChange={this.handleChange.bind(this, 'email')} placeholder="Email" />
+      <Form.Control type="email" name="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email" required />
     </Form.Group>
         <Form.Group controlId="exampleForm.ControlInput3">
-          <Form.Control type="phone"  name="phone" value={this.state.phone} onChange={this.handleChange.bind(this, 'phone')} placeholder="Phone Number" />
+          <Form.Control type="phone"  name="phone" pattern="[0-9]*" value={this.state.phone} onChange={this.handlePhone} placeholder="Phone Number" required/>
         </Form.Group>
      <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Control as="textarea" name="message" value={this.state.textarea} onChange={this.handleChange.bind(this, 'textarea')} placeholder="Address, Builling Detail" rows={3} />
+          <Form.Control as="textarea" name="message" value={this.state.textarea} onChange={this.handleMessage} placeholder="Address, Builling Detail" rows={3} required/>
         </Form.Group>
 
             <span class="orderSubTitle"> Preffered Delivery Time</span>
@@ -88,16 +114,21 @@ return(
 </div> 
 
 <div class="col-lg-8 px-5 date">
-    <select class="form-control " name="time" onChange={this.handleInputChange}>
-            <option selected>am</option>
-                <option value="1">pm</option>
+    <select class="form-control" value={this.state.time} name="time" onChange={ this.handleChangeTime} >
+            <option value="am" selected >am</option>
+                <option value="pm" >pm</option>
     </select>
+
 </div>
 </div> 
     <Form.Group controlId="exampleForm.ControlTextarea2">
-    <Form.Control as="textarea" placeholder="Aditional Message" rows={3} />
+    <Form.Control as="textarea" name="address" placeholder="Aditional Message" rows={3} required />
   </Form.Group>
-</Form>
+  {/* <div class="row pr-5 pb-5" id="confirm"> 
+
+  <input type="submit" value=" Confirm Order" class="px-4 py-1 addBtn"/>
+
+            </div> */}
 </div>
       );
     }

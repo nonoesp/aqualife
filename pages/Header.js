@@ -26,7 +26,7 @@ function Header() {
             <Nav.Link href="#news">News</Nav.Link>
             {/* <Nav.Link href="/Test">Test</Nav.Link> */}
             <div  class="logoPosition"> 
-            <Nav.Link > <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link>
+            <Nav.Link href="#video"> <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link>
             </div>
             <Nav.Link href="#contactSection">Get In Touch</Nav.Link>
           </Nav>

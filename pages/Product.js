@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Modal, Form} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import DirectusSDK from '@directus/sdk-js';
 import '../global.js';
 import Order from './Order';
