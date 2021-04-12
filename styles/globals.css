@@ -401,9 +401,14 @@ video:focus{
     max-height: 500px;
     object-fit: contain;
   }
-  .bottle0,.bottle1{
+ .bottle1{
     max-width: 200px;
     max-height: 400px;
+    object-fit: contain;
+  }
+  .bottle0{
+    max-width: 150px;
+    max-height: 350px;
     object-fit: contain;
   }
   .bottlePosition .col-4{
@@ -416,7 +421,7 @@ video:focus{
  .popUpBottle img{
   width: 40%;
  }
- /* .slick-dots{
+ .slick-dots{
    display:flex !important;
    align-items: center;
    justify-content:center ;
@@ -424,8 +429,7 @@ video:focus{
  .slick-dots li button{
   width: 30px !important;
   height: 10px !important;
-  border:1px solid #7ea7c2;
-  background: #7ea7c2 !important;
+  border:1px solid #7ea7c2 !important;
  }
  .slick-dots li{
   padding-left: 20px !important;
@@ -436,9 +440,18 @@ video:focus{
   height: 10px !important;
   background: #7ea7c2 !important;
  }
+ .slick-dots{
+  padding-right: 35px !important;
+ }
  .slick-dots li button:before {
   content:unset !important;
- } */
+  opacity: .25 !important;
+    color: red !important;
+ }
+ .slick-dots li.slick-active button:before{
+  opacity: .75;
+  color: red;
+ }
   .slick-prev:before, .slick-next:before{
     color:#7ea7c2 !important;
   }
