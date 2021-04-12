@@ -416,6 +416,29 @@ video:focus{
  .popUpBottle img{
   width: 40%;
  }
+ /* .slick-dots{
+   display:flex !important;
+   align-items: center;
+   justify-content:center ;
+ }
+ .slick-dots li button{
+  width: 30px !important;
+  height: 10px !important;
+  border:1px solid #7ea7c2;
+  background: #7ea7c2 !important;
+ }
+ .slick-dots li{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+ }
+ .slick-active button{
+  width: 30px !important;
+  height: 10px !important;
+  background: #7ea7c2 !important;
+ }
+ .slick-dots li button:before {
+  content:unset !important;
+ } */
   .slick-prev:before, .slick-next:before{
     color:#7ea7c2 !important;
   }
@@ -670,6 +693,9 @@ outline:none;
   @media (max-width: 991px){
     #productDetail .bottleDetail{
       top:0%;
+    }
+    .sticky{
+      position:unset !important;
     }
     #contactSection , #map,#news{
       padding-top:unset !important;
