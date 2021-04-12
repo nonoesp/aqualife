@@ -515,7 +515,7 @@ video:focus{
   .readMore{
   font-size:15px; color:white; 
   background-color: #7ea7c2;
-  border-radius: 20px;
+  border-radius:15px;
   padding: 10px;
   }
   .order{
