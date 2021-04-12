@@ -189,8 +189,8 @@ async componentDidMount(){
                              
                               }) }
                         </div>
-                        <div class="categorySection"> 
-                        <p class="py-2 px-4 productBrief">{category.name}</p> </div>
+                        <div class="categorySection px-5"> 
+                        <p class="py-2 px-5 productBrief">{category.name}</p> </div>
            
                   </div>
                   ))}
