@@ -162,6 +162,9 @@ video:focus{
   justify-content: center;
   align-items: center;
   }
+.body-container{
+  top:0px !important;
+}
   .slideDownAnimation {
   display: flex;
   margin: 0 auto;
