@@ -482,6 +482,9 @@ video:focus{
     z-index: 1000;
     width: 100%;
   }
+   .bottlePosition .col-4, .popUpBottle{
+     height:400px;
+    }
   .categoryDesc{
   color:black; font-size:25px; font-weight:bold;
   }
@@ -558,8 +561,8 @@ video:focus{
     position: absolute;
     left: 50%;
     padding-bottom: 6px;
-    transform: translate(-50%, -100%);
-    -ms-transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    bottom:-40px;
     text-align: center;
   }
   .content:hover .middle {
