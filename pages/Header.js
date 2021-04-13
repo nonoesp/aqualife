@@ -19,7 +19,7 @@ function Header() {
         <Navbar  expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-           <div class="d-none d-md-block"> <Nav.Link href="#video"> <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link></div>
+           <div class="logoMobile"> <Nav.Link href="#video"> <img src='../images/aqualife-logo.png' class="headerLogo" alt="logo" /> </Nav.Link></div>
           <Nav >
             <Nav.Link href="#video">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
