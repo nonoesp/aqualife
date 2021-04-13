@@ -31,10 +31,10 @@ import Carousel from "react-slick";
 //   ssr: false
 // });
 
-const Test = dynamic(
-  () => import('./components/Test'),
-  { loading: () => <p>...</p>, ssr: false }
-);
+// const Test = dynamic(
+//   () => import('./components/Test'),
+//   { loading: () => <p>...</p>, ssr: false }
+// );
 
 import {Button} from 'react-bootstrap';
 
@@ -123,7 +123,18 @@ async componentDidMount(){
                 />
          </VideoScroll>  */}
             
-            <Test/>
+            {/* <Test/> */}
+        
+          <video 
+            autoPlay
+            loop
+            muted
+            src="../aqualife.mp4"
+              type="video/mp4"
+            >
+            
+              </video>
+        
 
          </div>
       
