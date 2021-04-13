@@ -163,7 +163,7 @@ video:focus{
   align-items: center;
   }
 .body-container{
-  top:0px !important;
+  top:100vh !important;
 }
   .slideDownAnimation {
   display: flex;
