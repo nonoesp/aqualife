@@ -100,6 +100,9 @@ async componentDidMount(){
     return (
      
       <div>
+      <div class="app-container">
+            <Header />
+          </div>
         <div  class="d-none d-md-block"> 
         {/* <VideoScroll
        
@@ -153,11 +156,7 @@ async componentDidMount(){
          <video src="../aqualife.mp4"/>
          </div> */}
       <div class="body-container">
-
-          <div class="app-container">
-            <Header />
-          </div>
-          <section id="about">
+        <section id="about">
             <About/>
           </section>
           {/* 
