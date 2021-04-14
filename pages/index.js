@@ -127,7 +127,6 @@ async componentDidMount(){
         
           <video 
             autoPlay
-            loop
             muted
             src="../aqualife.mp4"
               type="video/mp4"
@@ -141,7 +140,6 @@ async componentDidMount(){
         <div class="mobileVideo"> 
           <video 
             autoPlay
-            loop
             muted
             src="../aqualife.mp4"
               type="video/mp4"
