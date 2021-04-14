@@ -403,9 +403,9 @@ video:focus{
       align-items: center;
   }
   .bottle0, .bottle1,.bottle2,.bottle3{
-    width: 100%;
+    width: 100%; object-fit: contain;
   }
-  .bottle2{
+/*   .bottle2{
     max-width: 250px;
     max-height: 500px;
     object-fit: contain;
@@ -419,7 +419,7 @@ video:focus{
     max-width: 150px;
     max-height: 350px;
     object-fit: contain;
-  }
+  } */
   .bottlePosition .col-4{
     display:flex;
     justify-content: center;
