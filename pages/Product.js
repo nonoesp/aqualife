@@ -60,37 +60,50 @@ render(){
       <img src={global.ASSET_URL+product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
          </div> 
    <div class="col-md-4 specification"> 
-        <div class="row">
-            <p class="bottleCategory"> POTASSIUM <span class="px-4 cat"> {product.potassium}  </span></p>
-            
-        </div>
-        <div class="row">
-            <p class="bottleCategory">CALCIUM   <span class="px-4 cat"> {product.calcium}</span></p>
-          
-        </div>
-        <div class="row ">
-            <p class="bottleCategory">MAGNESIUM     <span class="px-4 cat">{product.magnesium} </span></p>
-        
-        </div>
-        <div class="row ">
-            <p class="bottleCategory">IRON  <span class="px-4 cat">{product.iron} </span></p>
-        </div>
-        <div class="row ">
-            <p class="bottleCategory">BICARBONATE     <span class="px-4 cat">{product.bicarbonate} </span></p>
-        
-        </div>
-        <div class="row ">
-            <p class="bottleCategory">CHLORIDES    <span class="px-4 cat">{product.chlorides} </span></p>
-          
-        </div>
-        <div class="row ">
-            <p class="bottleCategory">SULFATES <span class="px-4 cat">{product.sulfates} </span></p>
-            
-        </div>
-        <div class="row ">
-            <p class="bottleCategory">pH <span class="px-4 cat">{product.ph} </span></p>
-            
-        </div>
+       
+       <table>
+       <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>
+  <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>
+  <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>
+  <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>
+  <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>  <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>
+  <tr class="bottleCategory">
+            POTASSIUM 
+             <td class="px-4 cat"> 
+                    {product.potassium}
+                </td>
+        </tr>
+       </table>
     </div>
     
 
