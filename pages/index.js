@@ -176,7 +176,7 @@ async componentDidMount(){
               </div>
                 {this.state.product?<Product show={this.state.addModalsShowProduct} product={(this.state.product)?this.state.product:{}} onHide={addModalsCloseProduct}/>:null}
                 <Carousel adaptiveHeight={true}  ref={c =>
-                  (this.carousel = c)} {...settings} >
+                  (this.carousel = c)} infinite: false, {...settings} >
                   {this.state.categories.map((category,index)=> (
                   <div key={'category'+index} class="position">
                     
