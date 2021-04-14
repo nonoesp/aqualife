@@ -581,12 +581,12 @@ video:focus{
     text-align: center;
   }
 .content:hover img{
-  transform: translateY(calc(-100% + 300px));
+  transform: translateY(calc(-90% + 349px));
 /*       transform: scale(1.1); */
-  transition: all .2s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 .content:hover{
-    transition: all .2s ease-in-out;
+    transition: all 0.9s ease-in-out;
 }
  .content:hover .middle {
     opacity: 1;
