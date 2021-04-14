@@ -721,7 +721,9 @@ outline:none;
     #productDetail .bottleDetail{
       top:0%;
     }
-   
+   .bottlePosition{
+     padding-top:20px;
+    }
     .App-header, .headerPosition{
           justify-content: end !important;
     }
