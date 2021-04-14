@@ -573,7 +573,8 @@ video:focus{
     text-align: center;
   }
 .content:hover img{
-  transform: translateY(calc(-100% + 300px));
+/*   transform: translateY(calc(-100% + 300px)); */
+      transform: scale(1.1);
 }
  .content:hover .middle {
     opacity: 1;
