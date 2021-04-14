@@ -539,7 +539,7 @@ video:focus{
     padding-left:0px !important;
 
   }
-.rowStyle .btn-primary{
+#orderNow .btn-primary{
   background-color: transparent !important;
 }
   #news .btn-primary{
