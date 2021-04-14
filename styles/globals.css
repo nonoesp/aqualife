@@ -579,8 +579,9 @@ video:focus{
     text-align: center;
   }
 .content:hover img{
-/*   transform: translateY(calc(-100% + 300px)); */
-      transform: scale(1.1);transition: all .2s ease-in-out;
+  transform: translateY(calc(-100% + 300px));
+/*       transform: scale(1.1); */
+  transition: all .2s ease-in-out;
 }
 .content:hover{
     transition: all .2s ease-in-out;
