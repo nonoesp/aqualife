@@ -42,6 +42,9 @@ li:hover{
 li{
   list-style: none; 
 }
+video{
+  width:100%;
+}
 .mobileVideo video{
   height: 100%;
   width: 100%;
