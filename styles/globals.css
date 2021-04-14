@@ -21,7 +21,9 @@ a {
 }
 .socialMedia{
   display:flex;
-
+}
+table{
+  line-height: 1.5em;
 }
 input[type=submit]:focus{
   outline:none;
