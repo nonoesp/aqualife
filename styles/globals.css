@@ -574,6 +574,9 @@ video:focus{
 .content:hover img{
   transform: translateY(calc(-100% + 300px));
 }
+ .content:hover .middle {
+    opacity: 1;
+  }
   .text{
     text-align: center; color:#7ea7c2;
   }
