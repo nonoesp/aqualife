@@ -744,13 +744,16 @@ outline:none;
     #productDetail .bottleDetail{
       top:0%;
     }
+    #about{
+      padding-top:unset !important;
+    }
    .bottlePosition{
      padding-top:20px;
     }
     .App-header, .headerPosition{
           justify-content: end !important;
     }
-    .sticky{
+    .headerPosition{
       position:unset !important;
     }
     #contactSection , #map,#news{
