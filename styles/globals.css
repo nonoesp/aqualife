@@ -423,6 +423,7 @@ video:focus{
   .bottlePosition .col-4{
     display:flex;
     justify-content: center;
+    height: 500px !important;
   }
   .popUpBottle{
     display: flex; justify-content: center; align-items: center;
