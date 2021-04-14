@@ -311,13 +311,13 @@ video:focus{
     width: 30%;
     position: absolute;
     z-index: 1;
-    top: 77%;
+    top: 83%;
     left: -8%;
   }
 .imageSize{
   width: 37%;
   position: absolute;
-  top: 80%;
+  top: 88%;
   right: -70%;
   z-index: 1;
   }
