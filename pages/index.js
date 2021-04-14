@@ -166,9 +166,9 @@ async componentDidMount(){
           <section id="products" >
             <div class="contentModule pt-5">
               <div> 
-                     <h3 class="title">{this.state.categoryItem.title}</h3>
+                     <h3 class="title pb-3">{this.state.categoryItem.title}</h3>
                       
-                      <p class=" col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
+                      <p class=" col-md-4 px-0 py-3 description"> {this.state.categoryItem.description}</p>
                       <Button cart={cart}
                             onClick={()=> this.setState({addModalsShow: true})}> 
                         PLACE ORDER
