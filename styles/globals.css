@@ -309,9 +309,9 @@ video:focus{
   }
   .bottomLeft{
     width: 30%;
-    top: 73%;
     position: absolute;
     z-index: 1;
+    top: 77%;
     left: -8%;
   }
 .imageSize{
@@ -322,7 +322,9 @@ video:focus{
   z-index: 1;
   }
   .centeredImage{
-    position: relative; width:100%;height:100%;object-fit: contain;
+    position: relative;
+/*     width:100%;height:100%; */
+    object-fit: contain;
   }
   .contentPosition{
   color: #1a1a1a;
