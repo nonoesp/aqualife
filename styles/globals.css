@@ -526,7 +526,7 @@ video:focus{
 .modal-content{
   background: linear-gradient( 
     300deg
-     , #f0f0f0 20%, rgb(126 167 194) 60%);
+     , #f0f0f0 20%, rgb(126 167 194) 90%);
      border-radius:20px !important;
 }
   .close{
@@ -539,6 +539,9 @@ video:focus{
     padding-left:0px !important;
 
   }
+.rowStyle .btn-primary{
+  background-color: transparent !important;
+}
   #news .btn-primary{
     border:none !important;
     background-color: transparent !important;
