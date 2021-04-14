@@ -39,7 +39,7 @@ render(){
 <div class="row rowStyle">
 <div class="col-md-4"> 
         <div class="row" class="order"> 
-             <p class="orderTitle"> {product.product_name} </p> 
+             <p class="orderTitle pb-3"> {product.product_name} </p> 
              {/* <span class="orderSubTitle"> Fill out your info</span> */}
              <p class="description"> {product.product_description} </p>
              <a href ="#products"> <Button  onClick={()=> this.setState({addModalsShow: true})}> ORDER NOW 
