@@ -544,10 +544,10 @@ video:focus{
   padding: 10px;
   }
   .order{
-  line-height: 0.5em;
+  line-height: 0.5em;padding-left: 10px;
   }
   .orderTitle{
-  font-size:30px; color:white; line-height:30px;
+  font-size:30px; color:white;line-height: 1.3em;
   }
   .cat{
     color:#7ea7c2;
