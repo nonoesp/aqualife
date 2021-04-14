@@ -241,6 +241,7 @@ async componentDidMount(){
             <div class="App">
                 <p class="title pt-5"> Latest News and Release</p>
             </div>
+
             <div class="contentModule">
                 <div class="row pt-5">
                   {this.state.news.map((news,index) => (
