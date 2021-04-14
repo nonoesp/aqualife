@@ -28,7 +28,7 @@ class About extends Component {
 <div class="contentModule pt-5">  
 {/* class="py-5" */}
     <div class="row"> 
-        <div class="col-md-6 px-5"> 
+        <div class="col-md-6 pr-5"> 
          <p class="title"> {this.state.abouts.title}</p>
          <p class="description"> {this.state.abouts.description}</p>
            <div class="aboutItems">
