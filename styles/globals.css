@@ -306,15 +306,15 @@ video:focus{
     width: 30%;
     position: absolute;
     z-index: 1;
-    top: -10%;
-    left: 140%;
+    top: 1%;
+    left: 120%;
   }
   .bottomLeft{
     width: 30%;
     position: absolute;
     z-index: 1;
-    top: 5%;
-    left: 120%;
+    top: 80%;
+    left: -10%;
   }
 .imageSize{
   width: 37%;
