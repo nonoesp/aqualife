@@ -69,38 +69,45 @@ render(){
                 </td>
         </tr>
   <tr class="bottleCategory">
-            POTASSIUM 
+            CALCIUM 
              <td class="px-4 cat"> 
-                    {product.potassium}
+                    {product.calcium}
                 </td>
         </tr>
   <tr class="bottleCategory">
-            POTASSIUM 
+            MAGNESIUM 
              <td class="px-4 cat"> 
-                    {product.potassium}
+                    {product.magnesium}
+                </td>
+        </tr>
+   <tr class="bottleCategory">
+            IRON 
+             <td class="px-4 cat"> 
+                    {product.iron}
+                </td>
+        </tr>
+   <tr class="bottleCategory">
+            BICARBONATE 
+             <td class="px-4 cat"> 
+                    {product.bicarbonate}
                 </td>
         </tr>
   <tr class="bottleCategory">
-            POTASSIUM 
+            CHLORIDES 
              <td class="px-4 cat"> 
-                    {product.potassium}
+                    {product.chlorides}
                 </td>
         </tr>
   <tr class="bottleCategory">
-            POTASSIUM 
+            SULFATES 
              <td class="px-4 cat"> 
-                    {product.potassium}
-                </td>
-        </tr>  <tr class="bottleCategory">
-            POTASSIUM 
-             <td class="px-4 cat"> 
-                    {product.potassium}
+                    {product.sulfates}
                 </td>
         </tr>
   <tr class="bottleCategory">
-            POTASSIUM 
+            pH 
              <td class="px-4 cat"> 
-                    {product.potassium}
+                    {product.ph}
                 </td>
         </tr>
        </table>
