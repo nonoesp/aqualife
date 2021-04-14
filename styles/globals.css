@@ -427,9 +427,9 @@ video:focus{
   .popUpBottle{
     display: flex; justify-content: center; align-items: center;
   }
- .popUpBottle img{
+/*  .popUpBottle img{
   width: 50%;
- }
+ } */
  .slick-dots{
    display:flex !important;
    align-items: center;
