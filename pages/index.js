@@ -182,7 +182,7 @@ async componentDidMount(){
                   {this.state.categories.map((category,index)=> (
                   <div key={'category'+index} class="position">
                     
-                        <div class="bottlePosition pt-4">
+                        <div class="bottlePosition">
                          
                             {category.products.map((product,index)=> {  
                               if(product.products_id)
