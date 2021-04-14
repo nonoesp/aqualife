@@ -561,6 +561,9 @@ video:focus{
   #datePicker input{
   width:165% !important; height: 37px !important; border-radius:10px;border: 1px solid #ced4da;outline:none;    color: #495057;
   }
+.rowStyle{
+      justify-content: center;
+}
   .modal-header{
   border-bottom:none !important;     padding: unset !important;
   }
