@@ -15,7 +15,7 @@ function Header() {
   })
  return (
    <div> 
- <div class="headerPosition" id="myHeader">
+ <div class="headerPosition sticky" id="myHeader">
         <Navbar  expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
