@@ -582,7 +582,8 @@ video:focus{
   }
 .content:hover img{
   transform: translateY(calc(-90% + 349px));
-/*       transform: scale(1.1); */
+/*       transform: scale(1.1); */ 
+  
   transition: all 0.9s ease-in-out;
 }
 .content:hover{
