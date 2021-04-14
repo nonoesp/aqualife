@@ -36,7 +36,7 @@ render(){
         </div>
  <section id="productDetail"> 
    <Modal.Body>
-<div class="row rowStyle">
+<div class="row rowStyle m-3">
 <div class="col-md-4"> 
         <div class="row" class="order"> 
              <p class="orderTitle pb-3"> {product.product_name} </p> 
