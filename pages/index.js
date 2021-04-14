@@ -127,6 +127,7 @@ async componentDidMount(){
         
           <video 
             autoPlay
+         
             muted
             src="../aqualife.mp4"
               type="video/mp4"
@@ -140,6 +141,7 @@ async componentDidMount(){
         <div class="mobileVideo"> 
           <video 
             autoPlay
+            loop
             muted
             src="../aqualife.mp4"
               type="video/mp4"
@@ -166,9 +168,9 @@ async componentDidMount(){
           <section id="products" >
             <div class="contentModule pt-5">
               <div> 
-                     <h3 class="title pb-3">{this.state.categoryItem.title}</h3>
+                     <h3 class="title">{this.state.categoryItem.title}</h3>
                       
-                      <p class=" col-md-4 px-0 py-3 description"> {this.state.categoryItem.description}</p>
+                      <p class=" col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
                       <Button cart={cart}
                             onClick={()=> this.setState({addModalsShow: true})}> 
                         PLACE ORDER
@@ -241,7 +243,6 @@ async componentDidMount(){
             <div class="App">
                 <p class="title pt-5"> Latest News and Release</p>
             </div>
-
             <div class="contentModule">
                 <div class="row pt-5">
                   {this.state.news.map((news,index) => (
