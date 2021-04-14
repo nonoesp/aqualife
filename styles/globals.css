@@ -750,6 +750,12 @@ outline:none;
    .bottlePosition{
      padding-top:20px;
     }
+    .bottlePosition .col-4{
+      height: unset !important;
+      }
+    .content:hover img {
+    transform: unset !important;
+    }
     .App-header, .headerPosition{
           justify-content: end !important;
     }
