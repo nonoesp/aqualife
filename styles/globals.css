@@ -302,10 +302,10 @@ video:focus{
   }
   .topRight{
     width: 30%;
-    top: 10%;
     position: absolute;
     z-index: 1;
-    left:80%;
+    top: -10%;
+    left: 140%;
   }
   .bottomLeft{
     width: 30%;
@@ -315,10 +315,10 @@ video:focus{
     left: -8%;
   }
 .imageSize{
-  width: 40%;
+  width: 37%;
   position: absolute;
-  top:70%;
-  right: -20%;
+  top: 80%;
+  right: -70%;
   z-index: 1;
   }
   .centeredImage{
