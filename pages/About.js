@@ -2,13 +2,25 @@ import React, { Component } from 'react';
 import DirectusSDK from '@directus/sdk-js';
 import '../global.js';
 const directus = new DirectusSDK(global.URL);
+import $ from 'jquery';
+// import 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js';
+// import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js';
+import { gsap } from "gsap";
+
+import { SplitChars, Timeline, Tween, Controls, PlayState } from 'react-gsap';
+
+var wx;
+var wy;
 
 class About extends Component {
 
     constructor(props){
         super(props);
-    
-        this.state={abouts:{} ,abouts_items:[]}
+        this.state={abouts:{} ,abouts_items:[],  x: 0,
+        y: 0}
+
+
+        this.handleMouseMove = this.handleMouseMove.bind(this);
 
     }
     async componentDidMount(){
@@ -19,16 +31,51 @@ class About extends Component {
             abouts:abouts.data[0],
             abouts_items:abouts_items.data
           })
-
+        }
         //   console.log(abouts);
-      }
+
+
+        handleMouseMove = event =>{
+		
+          var wx = $(window).width();
+          var wy = $(window).height();
+          
+          var x = event.pageX ;
+          var y = event.pageY ;
+          
+        
+
+
+          var newx = x - wx/2;
+          var newy = y - wy/2;
+          
+         
+        
+          
+          $('#wrapper img').each(function(){
+            var speed = $(this).attr('data-speed');
+            if($(this).attr('data-revert')) speed *= -1;
+            console.log((y));
+            gsap.to($(this), 1, {x: (1 - newx*speed), y: (1 - newy*speed)});
+            
+          });
+          
+        }
+
+        // handleMouseMove = e => {
+        //   this.setState({
+        //     x: e.clientX,
+        //     y: e.clientY
+        //   });
+        // };
+      
     render() {
         return (
     
-<div class="contentModule pt-5">  
+<div class="contentModule pt-5" onMouseMove={this.handleMouseMove}>  
 {/* class="py-5" */}
     <div class="row"> 
-        <div class="col-md-6 pr-5"> 
+        <div class="col-md-5 pr-5"> 
          <p class="title"> {this.state.abouts.title}</p>
          <p class="description"> {this.state.abouts.description}</p>
            <div class="aboutItems">
@@ -46,13 +93,26 @@ class About extends Component {
              </ul>
            </div>   
         </div> 
-        <div class="col-md-5 containerEffect offset-md-1">
-        <img src='../images/image.png' alt="water" class="bottomLeft"  />
-        <img src='../images/image-3.png' alt="water" class="topRight" />
+
+        <div class="col-md-5 containerEffect d-flex align-items-center offset-md-2">
+          <div id="wrapper" >
+
+     
+              <img data-speed="0.03" data-revert="true" src='/images/image.png' alt="water" class="bottomLeft"  />
+              <img data-speed="0.02" src='/images/image-3.png' alt="water" class="topRight" />
+            
+              <img data-speed="0.02"  src='/images/w2.png' alt="water" class="imageSize" />
+              <img data-speed="0.01" src='/images/about-img.png' alt="water" class="centeredImage"/> 
+           </div>
+          </div>
       
-        <img src='../images/w2.png' alt="water" class="imageSize" />
-        <img src='../images/about-img.png' alt="water" class="img-fluid" class="centeredImage"/> 
-        </div>
+
+
+         {/* <div onMouseMove={this.handleMouseMove}>
+        {this.state.x || this.state.y
+          ? "The mouse is at x: " + this.state.x + ", y: " + this.state.y
+          : "Move the mouse over this box"}
+      </div> */}
            </div>
            </div>
 

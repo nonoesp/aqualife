@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function header(){
     return (
         <div class="bg-light App">
-        <img src='../images/footer-logo.png' class="logoFooter" alt="logo" />
+    <a href="#video">    <img src='../images/footer-logo.png' class="logoFooter" alt="logo" /></a> 
         <ul class="footerNav pl-0">
         <a href="#video"><li class="footerItem"> Home</li></a> 
           <a href="#about"><li class="footerItem"> About</li></a> 

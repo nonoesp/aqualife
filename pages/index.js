@@ -103,6 +103,7 @@ async componentDidMount(){
       <div class="app-container">
             <Header />
           </div>
+          <section id="video">
         <div  class="d-none d-md-block"> 
         {/* <VideoScroll
        
@@ -155,6 +156,7 @@ async componentDidMount(){
          {/* <div class="col-md-12">
          <video src="../aqualife.mp4"/>
          </div> */}
+         </section>
       <div class="body-container">
         <section id="about">
             <About/>
@@ -257,14 +259,11 @@ async componentDidMount(){
                         <p class="subDesc">{news.brief}</p>
                       </div>
                       <div>
-                        <Button class="pl-0"> 
-                        <Button 
-                         class="pl-0"
-                            onClick={()=>
-                            this.setState({addModalsShowNews: true})}> 
-                            <p class="readMore"> Read More</p>
-                        </Button>
-                        </Button>
+                       
+                      
+                        <p onClick={()=>
+                            this.setState({addModalsShowNews: true})} class="readMore  btn "> Read More</p>
+                    
                         <News
                         show={this.state.addModalsShowNews}
                         //if its true the product will be show if it's false not show

@@ -324,54 +324,49 @@ video:focus{
     background-size: cover;
     transition: 0.5s;
   } */
+  /* #contaianer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  } */
+  #wrapper {
+    position: relative;
+    z-index: 10;
+    
+    /* -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+  }
   .topRight{
-    width: 30%;
     position: absolute;
     z-index: 1;
-    top: 1%;
-    left: 120%;
+    top: -10%;
+    right: -20%;
+    width: 30%;
   }
   .bottomLeft{
-    width: 30%;
     position: absolute;
     z-index: 1;
-    top: 80%;
+    top: 70%;
     left: -10%;
+    width: 30%;
   }
 .imageSize{
-  width: 37%;
   position: absolute;
-  top: 85%;
-  right: -60%;
+  bottom: -20%;
+  right: -20%;
   z-index: 1;
+  width: 40%;
   }
-  /* .imageSize:hover, .topRight:hover, .bottomLeft:hover{
-    box-shadow: 0 0 0 10px #fffdfd;
-    transition: .5s ease;
-    -webkit-transform: rotateY(-10deg);
-    -ms-transform: rotateY(-10deg);
-    transform: rotateY(-10deg);
-    transition: 1s ease;
-  }
-  .centeredImage:hover {
-    box-shadow: 0 0 0 10px #fffdfd;
-    transition: .5s ease;
-    -webkit-transform: rotateZ(-10deg);
-    -ms-transform: rotateZ(-10deg);
-    transform: rotateZ(-10deg);
-    transition: 1s ease;
-
-    transition: 1s ease;
-    transform: translate3d(-0.0375px, -28.4866px, 0px);
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  } */
   .centeredImage{
     position: relative;
-/*     width:100%;height:100%; */
-    width: 140%;
-    height: 110%;
-    object-fit: contain;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
   }
   .contentPosition{
   color: #1a1a1a;
@@ -485,7 +480,8 @@ video:focus{
  }
  .slick-dots li button{
   width: 40px !important;
-  height: 0px !important;   padding: 3px !important;    background: red;
+  height: 0px !important;   padding: 3px !important;   
+  
  }
  .slick-dots li{
   padding-left: 20px !important;
@@ -502,11 +498,9 @@ video:focus{
  .slick-dots li button:before {
   content:unset !important;
   opacity: .25 !important;
-    color: red !important;
  }
  .slick-dots li.slick-active button:before{
   opacity: .75;
-  color: red;
  }
   .slick-prev:before, .slick-next:before{
     color:#7ea7c2 !important;
@@ -588,10 +582,11 @@ video:focus{
     align-items: center !important;
   }
   .readMore{
-  font-size:15px; color:white; 
-  background-color: #7ea7c2;
-  border-radius:7px;
-  padding: 10px;
+  font-size:15px;
+  color:white !important;
+  background-color: #7ea7c2 !important;
+  border-radius:7px !important;
+  padding: 10px !important;
   }
   .order{
   line-height: 0.5em;padding-left: 10px;
@@ -643,9 +638,6 @@ video:focus{
 .content{
     transition: all 0.3s ease-in-out;
 }
-
-
-
  .content:hover .middle {
     opacity: 1;
   }
@@ -792,6 +784,9 @@ outline:none;
     #productDetail .bottleDetail{
       top:0%;
     }
+    .logoFooter{
+      width: 50%;
+    }
     #about{
       padding-top:unset !important;
     }
@@ -812,7 +807,12 @@ outline:none;
     }
     #contactSection , #map,#news{
       padding-top:unset !important;
-
+    }
+    #products .contentModule {
+      padding-top:0px !important;
+    }
+    .centeredImage{
+        padding-top:50px;
     }
     .nav-link a{
         display:flex;
