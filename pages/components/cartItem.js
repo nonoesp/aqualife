@@ -65,9 +65,9 @@ export class CartItem extends Component {
                         <span class="orderSubTitle"> qty</span>
                     <div class="qty pt-3">  
                    
-                    <button class="add"  onClick = {this.decFromCart}  disabled={this.state.cartModel.quantity < 1}>-</button>
+                    <button class="add" type="button"  onClick = {this.decFromCart}  disabled={this.state.cartModel.quantity < 1}>-</button>
                     <input className="inputne" value={this.state.cartModel.quantity} />
-                    <button  class="remove" onClick={this.addToCart}>+</button>
+                    <button  class="remove" type="button" onClick={this.addToCart}>+</button>
                         </div> 
                         </div>
 

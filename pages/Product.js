@@ -57,7 +57,8 @@ render(){
     </div>
 </div>
       <div class="col-md-4 popUpBottle"> 
-      <img src={global.ASSET_URL+product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
+      {/* <img src={global.ASSET_URL+product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" /> */}
+      <img src={global.ASSET_URL+product.product_image_popup+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
          </div> 
    <div class="col-md-4 specification"> 
        

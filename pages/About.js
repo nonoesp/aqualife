@@ -46,7 +46,7 @@ class About extends Component {
              </ul>
            </div>   
         </div> 
-        <div class="col-md-5 offset-md-1">
+        <div class="col-md-5 containerEffect offset-md-1">
         <img src='../images/image.png' alt="water" class="bottomLeft"  />
         <img src='../images/image-3.png' alt="water" class="topRight" />
       
