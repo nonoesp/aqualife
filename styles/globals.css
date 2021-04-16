@@ -480,16 +480,15 @@ video:focus{
  }
  .slick-dots li button{
   width: 40px !important;
-  height: 0px !important;   padding: 3px !important;   
+  height: 0px !important;   padding: 3px !important;  background: #ccc !important;  
   
  }
  .slick-dots li{
   padding-left: 20px !important;
   padding-right: 20px !important;
  }
- .slick-active button{
-  width: 30px !important;
-  height: 10px !important;
+ li.slick-active button{
+
   background: #7ea7c2 !important;
  }
  .slick-dots{
@@ -675,7 +674,7 @@ video:focus{
   border-radius:5px; border:1px solid #7ea7c2; color:white; background-color: #7ea7c2;
   }
   .inputne{
-width:15%; border:1px solid #7ea7c2;text-align: center;
+    width: 22%; border:1px solid #7ea7c2;text-align: center;
   }
   .inputne:focus{
 outline:none;
