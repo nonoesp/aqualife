@@ -137,6 +137,9 @@ video:focus{
 .slick-slider{
   z-index: 0 !important;
 }
+.slick-slide{
+  height: auto  !important
+}
 .modal-header .close{
   padding: unset !important;
   margin: unset !important;
@@ -551,6 +554,9 @@ video:focus{
   .specification{
     line-height: 9px;
   }
+  .modal-dialog{
+padding-top: 90px;;
+  }
 .modal-content{
   background: linear-gradient( 
     300deg
@@ -691,7 +697,7 @@ outline:none;
   align-items: center;
   }
   .footerItem{
-  padding:10px;
+  padding:10px; font-size: 15px;
   color:grey; cursor:pointer;
   }
   @media(max-width:1099px){
@@ -733,7 +739,7 @@ outline:none;
   }
  
   @media (min-width:1000px){
-    .mobileVideo{
+    .mobileVideo, .mobileLogo{
       display:none !important;
     }
   }
@@ -779,10 +785,49 @@ outline:none;
       top: 80%;
     }
   }
+  @media (max-width: 414px){
+    .bottlePosition .col-4{
+      height: 200px !important;
+    }
+    .middle{
+      display: none !important;
+    }
+    .categorySection{
+      padding-top: 70px !important;
+    }
+  }
   @media (max-width: 991px){
     #productDetail .bottleDetail{
       top:0%;
     }
+    .headerPosition{
+      padding-left:10px;
+    }
+    .logoM{
+      display: contents;
+    }
+    .socialMedia{
+      padding-top:10px;
+    }
+    .media{
+      padding-right:10px;
+    }
+    #news .App{
+      text-align: unset !important; padding-left:15px;
+    }
+.navbar .navbar-toggler, .mobileLogo{
+display: contents;
+}
+  .navbar-nav{
+    align-items: end;
+  }
+  .nav-link{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
     .logoFooter{
       width: 50%;
     }
@@ -792,9 +837,9 @@ outline:none;
    .bottlePosition{
      padding-top:20px;
     }
-    .bottlePosition .col-4{
+    /* .bottlePosition .col-4{
       height: unset !important;
-      }
+      } */
     .content:hover img {
     transform: unset !important;
     }

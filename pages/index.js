@@ -169,7 +169,7 @@ async componentDidMount(){
           <section id="products" >
             <div class="contentModule pt-5">
               <div> 
-                     <h3 class="pb-3 title">{this.state.categoryItem.title}</h3>
+                     <h3 class="pb-3 pt-5 title">{this.state.categoryItem.title}</h3>
                       
                       <p class="py-3 col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
                       <Button cart={cart}
