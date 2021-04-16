@@ -98,11 +98,11 @@ class About extends Component {
           <div id="wrapper" >
 
      
-              <img data-speed="0.03" data-revert="true" src='/images/image.png' alt="water" class="bottomLeft"  />
-              <img data-speed="0.02" src='/images/image-3.png' alt="water" class="topRight" />
+              <img data-speed="0.04" data-revert="true" src='/images/image.png' alt="water" class="bottomLeft"  />
+              <img data-speed="0.03" src='/images/image-3.png' alt="water" class="topRight" />
             
-              <img data-speed="0.02"  src='/images/w2.png' alt="water" class="imageSize" />
-              <img data-speed="0.01" src='/images/about-img.png' alt="water" class="centeredImage"/> 
+              <img data-speed="0.03"  src='/images/w2.png' alt="water" class="imageSize" />
+              <img data-speed="0.02" src='/images/about-img.png' alt="water" class="centeredImage"/> 
            </div>
           </div>
       

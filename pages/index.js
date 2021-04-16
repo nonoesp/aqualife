@@ -262,7 +262,7 @@ async componentDidMount(){
                        
                       
                         <p onClick={()=>
-                            this.setState({addModalsShowNews: true})} class="readMore  btn "> Read More</p>
+                            this.setState({addModalsShowNews: true})} class="readMore btn "> Read More</p>
                     
                         <News
                         show={this.state.addModalsShowNews}
