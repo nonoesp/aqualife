@@ -800,6 +800,10 @@ outline:none;
     #productDetail .bottleDetail{
       top:0%;
     }
+    #news col-md-4{
+      padding-top:20px;
+      padding-bottom:20px;
+    }
     .headerPosition{
       padding-left:10px;
     }
