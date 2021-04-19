@@ -37,12 +37,12 @@ render(){
  <section id="productDetail"> 
    <Modal.Body>
 <div class="row rowStyle m-3">
-<div class="col-md-4"> 
+<div class="col-md-4 paddingDesc"> 
         <div class="row" class="order"> 
-             <p class="orderTitle pb-3"> {product.product_name} </p> 
+             <p class="orderTitle"> {product.product_name} </p> 
              {/* <span class="orderSubTitle"> Fill out your info</span> */}
              <p class="description"> {product.product_description} </p>
-             <a href ="#products" id="orderNow"> <Button  onClick={()=> this.setState({addModalsShow: true})}> ORDER NOW 
+             <a href ="#products" id="orderNow"> <Button  onClick={()=> this.setState({addModalsShow: true})}> CONTACT US
                         </Button> </a>
                         <section  id="order"> 
                 <Order

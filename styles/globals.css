@@ -91,7 +91,7 @@ video{
   box-shadow: 0 0 0px 0rem #ffffff !important;
 }
 #productDetail .btn-primary{
-  border:2px solid white !important;
+  border:1.5px solid white !important;
 }
 .animated:focus{
   outline:none !important;
@@ -141,11 +141,14 @@ video:focus{
   height: auto  !important
 }
 .modal-header .close{
-  padding: unset !important;
+  padding-top: 22px;
+  padding-left: unset;
+  padding-right: unset;
   margin: unset !important;
   position: absolute;
-  right: 20px;
+  right:0px;
   z-index:100;
+  opacity: 1 !important;    font-weight: 400;
 }
   .rightArrow {
     position: absolute;
@@ -555,7 +558,7 @@ video:focus{
     line-height: 9px;
   }
   .modal-dialog{
-padding-top: 90px;;
+padding-top: 90px;
   }
 .modal-content{
   background: linear-gradient( 
@@ -564,7 +567,7 @@ padding-top: 90px;;
      border-radius:20px !important;
 }
   .close{
-  font-size:35px !important; color:#1468a0 !important; border:none !important;
+  font-size:35px !important; color:white !important; border:none !important; 
   }
   #news .modal-header{
     padding-top: 10px !important;
@@ -574,7 +577,8 @@ padding-top: 90px;;
 
   }
 #orderNow .btn-primary{
-  background-color: transparent !important;
+  background-color: transparent !important;         padding-top: 4px;
+  padding-bottom: 2px;
 }
   #news .btn-primary{
     border:none !important;
@@ -800,7 +804,28 @@ outline:none;
     #productDetail .bottleDetail{
       top:0%;
     }
-    #news col-md-4{
+    .orderSubTitle{
+      color:#7ea7c2;
+    }
+    .modal.show .modal-dialog{
+      margin: 25px !important;
+    }
+    .specification{
+      display: flex; justify-content: center;
+    }
+    .modal-content{
+      background: linear-gradient( 4deg, #f0f0f0 20%, rgb(126 167 194) 90%);
+    }
+    .order{
+      padding-left: unset;
+    }
+    .paddingDesc{
+        padding-left:0 !important;
+    }
+    .orderTitle .pb-3{
+      padding-bottom: unset !important;
+    }
+    #news .col-md-4{
       padding-top:20px;
       padding-bottom:20px;
     }
@@ -819,9 +844,9 @@ outline:none;
     #news .App{
       text-align: unset !important; padding-left:15px;
     }
-.navbar .navbar-toggler, .mobileLogo{
-display: contents;
-}
+    .navbar .navbar-toggler, .mobileLogo{
+    display: contents;
+    }
   .navbar-nav{
     align-items: end;
   }
@@ -868,10 +893,8 @@ display: contents;
         align-items: center;
     }
     .bottleCategory{
-      font-size: 14px;color:white;font-family: 'MontserratBold';padding-left:30px;
-    }
-    .specification{
-      padding-top:10px;
+      font-size: 14px;
+      padding-left:30px; line-height: 1.3em;
     }
     .contentModule {
     padding-left: 15px;
@@ -883,36 +906,13 @@ display: contents;
     width:27%;
   }
   .date{
-    width:50% !important;
+    width:55% !important;
   }
-  }
+  .modal-dialog {
+  margin: 2rem;
 
-  
-
-  body {
-    background: #fff;
-    margin: 0;
-    font-size: 90%;
-    font-family: 'Arimo', sans-serif;
-  }
-  /******FadingTitle******/
-  h1 {
-    font-size: 10vw;
-    top: -35vw;
-    text-shadow: 0 0 3px 4px rgba(0,0,0,0.3);
-    opacity: 0;
-    animation: fade 4s 2s forwards;
-  }
-  h2 {
-    font-weight: 100;
-    font-size: 3vw;
-    top: 20vw;
-    letter-spacing: 0.2vw;
-    opacity: 0;
-  }
-  h2:hover {
-    animation: fade 1s 2s forwards;
-  }
+}  
+}
   #intro {
     background: linear-gradient(#000, rgba(0,0,0,0.067)), rgba(255,255,255,0.9);
     background-size: 100% 100%, 100% 100%;
