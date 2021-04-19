@@ -270,7 +270,7 @@ fetch(global.URL+"custom/email", requestOptions)
 async getCart()
     {
       
-      var localCart = JSON.parse(localStorage.getItem('cart'));
+      var localCart = JSON.parse(await localStorage.getItem('cart'));
       if(localCart)
       {
         const product_ids = localCart.map(e => e['product_id']);
@@ -371,6 +371,7 @@ render(){
            </div>
       <span class="orderSubTitle">Your list</span>
           {this.state.selected_products.map((product,index) => {
+           
         if(product.quantity > 0)
         {
           return (<CartItem  key={product.product_name+"-"+product.quantity} cart={product} getData={this.getCart}/>)

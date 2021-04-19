@@ -29,7 +29,14 @@ export class CartItem extends Component {
 
         this.setState({
             cartModel :cart.getData()
+        },()=>{
+            if(this.state.cartModel.quantity  < 1)
+            {
+                this.removeCart();
+            }
         })
+
+       
         
     }
     removeCart(){

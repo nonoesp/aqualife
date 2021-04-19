@@ -42,7 +42,7 @@ render(){
              <p class="orderTitle"> {product.product_name} </p> 
              {/* <span class="orderSubTitle"> Fill out your info</span> */}
              <p class="description"> {product.product_description} </p>
-             <a href ="#products" id="orderNow"> <Button  onClick={()=> this.setState({addModalsShow: true})}> CONTACT US
+             <a href ="#products" id="orderNow"> <Button  onClick={()=> this.setState({addModalsShow: true})}> ORDER NOW
                         </Button> </a>
                         <section  id="order"> 
                 <Order

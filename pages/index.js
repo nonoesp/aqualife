@@ -8,7 +8,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import dynamic from 'next/dynamic'
 import '../global.js';
-
+import $ from 'jquery';
 import DirectusSDK from '@directus/sdk-js';
 
 
@@ -57,6 +57,9 @@ previous() {
   this.carousel.slickPrev();
 }
 async componentDidMount(){
+
+      
+        
       var prod= await  directus.items('products').read()
       var news = await  directus.items('news').read()
      
@@ -81,6 +84,24 @@ async componentDidMount(){
       document.getElementById("one").style.marginTop = `calc(${Math.floor(document.getElementById('v0').duration) * playbackRate + 'px'})`
      
     }
+     myCallback = () => {
+    
+      $(".animLogo").show();
+      $(".animLogo").animate({top: (window.innerWidth > 760)?'40px':'-45px',
+      width: '135px',
+      left: '49.5%'},500, function() {
+        $(".animLogo").hide();
+        $('.headerLg').css('visibility','visible');
+
+          window.scroll({
+            top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() - 50 ):($('.videoPlayerMob').height() + $('#myHeader').height()),
+            left: 0,
+            behavior: 'smooth'
+          });
+        
+       
+      });
+     };
   render(){
     const {cart} =this.state;
    
@@ -104,6 +125,7 @@ async componentDidMount(){
             <Header />
           </div>
           <section id="video">
+          <img src='../images/footer-logo.png' style={{display:'none'}} class="animLogo beforeAnim" alt="logo"  />
         <div  class="d-none d-md-block"> 
         {/* <VideoScroll
        
@@ -131,10 +153,12 @@ async componentDidMount(){
         
           <video 
             autoPlay
-         
+            onEnded={() => this.myCallback()}
             muted
-            src="../aqualife.mp4"
-              type="video/mp4"
+            src="../aqualifewithbg.mp4"
+            type="video/mp4"
+            class="videoPlayerDesk"
+              
             >
             
               </video>
@@ -145,10 +169,11 @@ async componentDidMount(){
         <div class="mobileVideo"> 
           <video 
             autoPlay
-         
+            onEnded={() => this.myCallback()}
             muted
-            src="../aqualife.mp4"
+            src="../aqualifewithbg.mp4"
               type="video/mp4"
+              class="videoPlayerMob"
             >
             
               </video>

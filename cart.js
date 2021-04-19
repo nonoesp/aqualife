@@ -22,6 +22,8 @@ export default class Cart {
                 this.index = this.cartArr.push(this) - 1;
             }
          this.quantity = this.cartArr[this.index].quantity;
+
+  
       }
       
       addTocart(){
@@ -50,6 +52,7 @@ export default class Cart {
       removeCart()
       {
         //   this.cartArr.splice(this.index,items-1);
+        console.log(this.index)
          this.cartArr.splice(this.index, 1);
         //   this.finds.splice(this.index, 1);
                  

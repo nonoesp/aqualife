@@ -174,7 +174,7 @@ video:focus{
   text-align: center;
   }
   .headerLogo{
-  height:25%; width:25%; 
+    width:125px; 
   }
   .navbar-nav{
   display: flex;
@@ -322,6 +322,28 @@ video:focus{
   #productDetail .description{
   font-size:15px;
   color:white; font-family:"MontserratRegular"; line-height: 20px;
+  }
+  #video{
+    position: relative;
+  }
+
+
+  .beforeAnim{
+    position: absolute;
+    top: 50%;
+    width: 62vw;
+    left: 50%;
+    transform: translate(-45.9%, -42%) rotate( 352deg);
+    z-index: 1000000;
+  }
+
+  .afterAnim{
+    position: absolute;
+    top: 16px; 
+    width: 125px;
+    left: 50%;
+    transform: translateX(-55%);
+    z-index: 1000000;
   }
   /* .containerEffetct{
     position: relative;
@@ -567,7 +589,7 @@ padding-top: 90px;
      border-radius:20px !important;
 }
   .close{
-  font-size:35px !important; color:white !important; border:none !important; 
+  font-size:35px !important; color:#7ea7c2 !important; border:none !important; 
   }
   #news .modal-header{
     padding-top: 10px !important;
@@ -577,8 +599,8 @@ padding-top: 90px;
 
   }
 #orderNow .btn-primary{
-  background-color: transparent !important;         padding-top: 4px;
-  padding-bottom: 2px;
+  background-color: transparent !important; padding-top: 4px; font-size:15px;
+  padding-bottom: 3px;
 }
   #news .btn-primary{
     border:none !important;
@@ -675,7 +697,7 @@ padding-top: 90px;
   }
   .list img{
   border:1px solid #5788a9;
-  border-radius:15px; width:15%; height:15%;
+  border-radius:15px; width:20%; height:20%;
   }
   .list .price{
   font-size:15px; color:#7ea7c2; padding-left:70px;
@@ -804,6 +826,13 @@ outline:none;
     #productDetail .bottleDetail{
       top:0%;
     }
+    .close{
+      color:white !important; 
+    }
+    .footerItem{
+      padding: 8px;
+      font-size: 13px;
+    }
     .orderSubTitle{
       color:#7ea7c2;
     }
@@ -844,11 +873,16 @@ outline:none;
     #news .App{
       text-align: unset !important; padding-left:15px;
     }
-    .navbar .navbar-toggler, .mobileLogo{
-    display: contents;
+    .navbar .navbar-toggler{
+    position: relative;
+    }
+    .mobileLogo{
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   .navbar-nav{
-    align-items: end;
+    align-items: end;    padding-top: 20px;
   }
   .nav-link{
     padding-left: 0px !important;
@@ -876,7 +910,7 @@ outline:none;
           justify-content: end !important;
     }
     .headerPosition{
-      position:unset !important;
+      position:relative !important;
     }
     #contactSection , #map,#news{
       padding-top:unset !important;
