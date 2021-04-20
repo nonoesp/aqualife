@@ -561,7 +561,6 @@ video:focus{
   .body-container{
     background: white;
     position: absolute;
-    top: calc(2600px * 2);
     z-index: 1000;
     width: 100%;
   }
@@ -778,8 +777,10 @@ outline:none;
   @media (max-width: 940px){
   
     .body-container{
-      top:unset !important;
+      top:0px !important;
+      position: relative;
     }
+    
     .leftArrow svg{
       width:40%;height:40%;
     }
@@ -801,9 +802,6 @@ outline:none;
     }
     #productDetail .bottleDetail{
       left: 40%;
-    }
-    #products{
-      padding-top:0px !important;
     }
     .bottleDetail{
       width:50%;
@@ -885,7 +883,7 @@ outline:none;
     }
     .mobileLogo{
       position:absolute;
-      left: 50%;
+      left: 50%; top:0;
       transform: translateX(-50%);
     }
   .navbar-nav{
@@ -901,8 +899,8 @@ outline:none;
     .logoFooter{
       width: 50%;
     }
-    #about{
-      padding-top:unset !important;
+    #about, #news, #contactSection{
+      padding-top:35px !important;
     }
    .bottlePosition{
      padding-top:20px;
@@ -916,12 +914,9 @@ outline:none;
     .App-header, .headerPosition{
           justify-content: end !important;
     }
-    .headerPosition{
+    /* .headerPosition{
       position:relative !important;
-    }
-    #contactSection , #map,#news{
-      padding-top:unset !important;
-    }
+    } */
     #products .contentModule {
       padding-top:0px !important;
     }

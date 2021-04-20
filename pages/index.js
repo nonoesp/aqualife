@@ -80,10 +80,10 @@ async componentDidMount(){
     this.setState({ frame: Math.floor(currentFrame)})
   }
  
-    onLoad = ({ wrapper, playbackRate, el }) => {
-      document.getElementById("one").style.marginTop = `calc(${Math.floor(document.getElementById('v0').duration) * playbackRate + 'px'})`
+    // onLoad = ({ wrapper, playbackRate, el }) => {
+    //   document.getElementById("one").style.marginTop = `calc(${Math.floor(document.getElementById('v0').duration) * playbackRate + 'px'})`
      
-    }
+    // }
      myCallback = () => {
     
       $(".animLogo").show();
@@ -125,7 +125,7 @@ async componentDidMount(){
       <div class="app-container">
             <Header />
           </div>
-          <section id="video">
+          <section id="video" class="pt-5 pt-md-0">
           <img src='../images/footer-logo.png' style={{display:'none'}} class="animLogo beforeAnim" alt="logo"  />
         <div  class="d-none d-md-block"> 
         {/* <VideoScroll
@@ -195,7 +195,7 @@ async componentDidMount(){
           <section id="products" >
             <div class="contentModule pt-5">
               <div> 
-                     <h3 class="pb-3 title">{this.state.categoryItem.title}</h3>
+                     <h3 class="py-3 pt-md-0  title">{this.state.categoryItem.title}</h3>
                       
                       <p class="py-3 col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
                       <Button cart={cart}
