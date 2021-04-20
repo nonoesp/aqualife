@@ -15,7 +15,7 @@ function Header() {
   })
  return (
    <div> 
- <div class="headerPosition sticky py-2" id="myHeader">
+ <div class="headerPosition sticky" id="myHeader">
              <div  class="logoPosition mobileLogo"> 
             <div href="#video" class="logoM"> <img style={{visibility:'hidden'}}  src='../images/aqualife-logo.png' class="headerLogo headerLg" alt="logo" /> </div>
             </div>
@@ -32,7 +32,7 @@ function Header() {
             <Nav.Link href="#news">News</Nav.Link>
             {/* <Nav.Link href="/Test">Test</Nav.Link> */}
             <div  class="logoPosition headerLogo d-none d-md-block"  style={{position:'relative'}}> 
-            <Nav.Link href="#video"> <img src='../images/logo-footer.svg' style={{visibility:'hidden'}}   class="d-none d-md-block headerLg w-100" alt="logo" /> </Nav.Link>
+            <Nav.Link href="#video"> <img src='../images/footer-logo.png' style={{visibility:'hidden'}}   class="d-none d-md-block headerLg w-100" alt="logo" /> </Nav.Link>
             
             </div>
            
