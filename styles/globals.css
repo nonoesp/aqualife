@@ -189,9 +189,9 @@ video:focus{
   justify-content: center;
   align-items: center;
   }
-.body-container{
+/* .body-container{
   top:100vh !important;
-}
+} */
   .slideDownAnimation {
   display: flex;
   margin: 0 auto;
@@ -272,6 +272,7 @@ video:focus{
   font-size: calc(10px + 2vmin);
   color: white;
   }
+  
   .headerPosition{
   display: flex;
   justify-content: center;
@@ -560,7 +561,7 @@ video:focus{
   }
   .body-container{
     background: white;
-    position: absolute;
+    position: relative;
     z-index: 1000;
     width: 100%;
   }
@@ -883,7 +884,7 @@ outline:none;
     }
     .mobileLogo{
       position:absolute;
-      left: 50%; top:0;
+      left: 50%; top:-10px;
       transform: translateX(-50%);
     }
   .navbar-nav{

@@ -28,7 +28,7 @@ import $ from 'jquery';
 render(){
     return (
       <div> 
-    <div class="headerPosition sticky py-3 py-md-0"   id="myHeader">
+    <div class="headerPosition sticky py-2 py-md-0 animHeader"  style={{display:'none'}} id="myHeader">
                 <div  class="logoPosition mobileLogo"> 
                 <div href="#video" class="logoM"> <img style={{visibility:'hidden'}}  src='../images/footer-logo.png' class="headerLogo headerLg" alt="logo" /> </div>
                 </div>

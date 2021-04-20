@@ -85,21 +85,25 @@ async componentDidMount(){
      
     // }
      myCallback = () => {
-    
       $(".animLogo").show();
-      $(".animLogo").animate({top: (window.innerWidth > 760)?'50px':'-45px',
+      $('.headerPosition').css('display','none');
+      $(".headerPosition").show();
+      
+      $(".animLogo").animate({top: (window.innerWidth > 760)?'50px':'30px',
       width: '135px',
       left: '48.2%'},500, function() {
         $(".animLogo").hide();
+       
         $('.headerLg').css('visibility','visible');
+       
         // disableScroll.off();
 
-          window.scroll({
-            top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() - $('#myHeader').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
-            left: 0,
-            behavior: 'smooth'
-          });
-        
+          // window.scroll({
+          //   top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
+          //   left: 0,
+          //   behavior: 'smooth'
+          // });
+        $('video').slideUp();
        
       });
      };
@@ -125,7 +129,7 @@ async componentDidMount(){
       <div class="app-container">
             <Header />
           </div>
-          <section id="video" class="pt-5 pt-md-0">
+          <section id="video" class="pt-md-0">
           <img src='../images/footer-logo.png' style={{display:'none'}} class="animLogo beforeAnim" alt="logo"  />
         <div  class="d-none d-md-block"> 
         {/* <VideoScroll
