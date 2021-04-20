@@ -6,35 +6,17 @@ import Product from './Product';
 import News from './News';
 import Contact from './Contact';
 import Footer from './Footer';
-import dynamic from 'next/dynamic'
+
 import '../global.js';
 import $ from 'jquery';
 import DirectusSDK from '@directus/sdk-js';
-import disableScroll from 'disable-scroll';
 
-// const directus = new DirectusSDK('http://aqualifecms.businessexchange.me');
 const directus = new DirectusSDK(global.URL);
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import Carousel from "react-slick";
 
-// const { VideoScroll } = dynamic(
-//   () => import('react-video-scroll'),
-//   {ssr: false}
-//   )
-
-// if (typeof window !== 'undefined') { 
-//   const { VideoScroll } = require('react-video-scroll'); 
-// }  
-
-// const VideoScroll = dynamic(() => import("react-video-scroll").then((mod) => mod.VideoScroll), {
-//   ssr: false
-// });
-
-// const Test = dynamic(
-//   () => import('./components/Test'),
-//   { loading: () => <p>...</p>, ssr: false }
-// );
 
 import {Button} from 'react-bootstrap';
 
@@ -130,62 +112,40 @@ async componentDidMount(){
             <Header />
           </div>
           <section id="video" class="pt-md-0">
-          <img src='../images/footer-logo.png' style={{display:'none'}} class="animLogo beforeAnim" alt="logo"  />
-        <div  class="d-none d-md-block"> 
-        {/* <VideoScroll
-       
-            onLoad={this.onLoad}
-            onScroll={this.onScroll}
-            playbackRate={300}
-            id="one"
-            style={{ position: 'sticky' }}
-            >
-                <video
-                id="v0"
-                src="../aqualife.mp4"
-                tabIndex="0"
-                autobuffer="autobuffer"
-                preload="preload"
-                style={{ width: '100%', objectFit: 'cover', transitionduration: '3s',
-                position: 'fixed',
-                top: 0,
-                height: '100%' }}
-                playsInline
-                />
-         </VideoScroll>  */}
-            
-            {/* <Test/> */}
-        
-          <video 
-            autoPlay
-            onEnded={() => this.myCallback()}
-            muted
-            src="../aqualifewithbg.mp4"
-            type="video/mp4"
-            class="videoPlayerDesk"
-              
-            >
-            
-              </video>
-        
+              <img src='../images/footer-logo.png' style={{display:'none'}} class="animLogo beforeAnim" alt="logo"  />
+              <div  class="d-none d-md-block"> 
 
-         </div>
-      
-        <div class="mobileVideo"> 
-          <video 
-            autoPlay
-            onEnded={() => this.myCallback()}
-            muted
-            src="../aqualifewithbg.mp4"
-              type="video/mp4"
-              class="videoPlayerMob"
-            >
+              
+                <video 
+                  autoPlay
+                  onEnded={() => this.myCallback()}
+                  muted
+                  src="../aqualifewithbg.mp4"
+                  type="video/mp4"
+                  class="videoPlayerDesk"
+                    
+                  >
+                  
+                    </video>
+              
+
+              </div>
             
-              </video>
-          </div>
-         {/* <div class="col-md-12">
-         <video src="../aqualife.mp4"/>
-         </div> */}
+              <div class="mobileVideo"> 
+                <video 
+                  autoPlay
+                  onEnded={() => this.myCallback()}
+                  muted
+                  src="../aqualifewithbg.mp4"
+                    type="video/mp4"
+                    class="videoPlayerMob"
+                  >
+                  
+                    </video>
+                </div>
+              {/* <div class="col-md-12">
+              <video src="../aqualife.mp4"/>
+              </div> */}
          </section>
       
         <section id="about">
@@ -294,14 +254,15 @@ async componentDidMount(){
                         <p onClick={()=>
                             this.setState({addModalsShowNews: true})} class="readMore btn "> Read More</p>
                     
-                        <News
+                       
+                      </div>
+                  </div>
+                  ))} 
+                   <News
                         show={this.state.addModalsShowNews}
                         //if its true the product will be show if it's false not show
                         onHide={addModalsCloseNews}
                         />
-                      </div>
-                  </div>
-                  ))} 
                 </div>
             </div>
           </section>

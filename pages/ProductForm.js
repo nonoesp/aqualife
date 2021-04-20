@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 import DatePicker from 'react-datepicker';
 import {Form} from 'react-bootstrap';
-import axios from 'axios';
-import Notifications from 'react-notify-toast'
-import DirectusSDK from '@directus/sdk-js';
+
 import '../global.js';
 // import sendpulse from "sendpulse-api";
 
