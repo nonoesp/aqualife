@@ -187,7 +187,7 @@ async componentDidMount(){
          <video src="../aqualife.mp4"/>
          </div> */}
          </section>
-      <div class="body-container">
+      
         <section id="about">
             <About/>
           </section>
@@ -312,7 +312,7 @@ async componentDidMount(){
           <div class="App">
             <Footer/>
           </div>
-      </div>
+      
    </div>
     )
   }
