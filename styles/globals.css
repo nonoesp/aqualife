@@ -107,7 +107,7 @@ video:focus{
   object-fit: cover;
 } */
 #contactSection{
-  padding-top:112px;
+  padding-top:50px;
 }
 .contentModule {
   width: 100%;
@@ -288,9 +288,7 @@ video:focus{
   .aboutTitle{
   font-family:"MontserratBold"; font-size: 15px; color:#28464D;
   }
-  .navLinkConnect{
-  padding: .5rem 1rem;
-  }
+
   #products, #news,#about,#map{
      padding-top:80px;
   }
@@ -333,7 +331,7 @@ video:focus{
     top: 50%;
     width: 62vw;
     left: 50%;
-    transform: translate(-45.9%, -42%) rotate( 352deg);
+    transform: translate(-45.9%, -42%);
     z-index: 1000000;
   }
 

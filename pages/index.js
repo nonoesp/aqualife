@@ -58,7 +58,11 @@ previous() {
 }
 async componentDidMount(){
 
-      
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
         
       var prod= await  directus.items('products').read()
       var news = await  directus.items('news').read()
@@ -87,14 +91,14 @@ async componentDidMount(){
      myCallback = () => {
     
       $(".animLogo").show();
-      $(".animLogo").animate({top: (window.innerWidth > 760)?'40px':'-45px',
+      $(".animLogo").animate({top: (window.innerWidth > 760)?'50px':'-45px',
       width: '135px',
-      left: '49.5%'},500, function() {
+      left: '48.2%'},500, function() {
         $(".animLogo").hide();
         $('.headerLg').css('visibility','visible');
 
           window.scroll({
-            top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() - 50 ):($('.videoPlayerMob').height() + $('#myHeader').height()),
+            top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
             left: 0,
             behavior: 'smooth'
           });
@@ -194,7 +198,7 @@ async componentDidMount(){
           <section id="products" >
             <div class="contentModule pt-5">
               <div> 
-                     <h3 class="pb-3 pt-5 title">{this.state.categoryItem.title}</h3>
+                     <h3 class="pb-3 title">{this.state.categoryItem.title}</h3>
                       
                       <p class="py-3 col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
                       <Button cart={cart}

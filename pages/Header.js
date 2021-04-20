@@ -15,9 +15,9 @@ function Header() {
   })
  return (
    <div> 
- <div class="headerPosition sticky" id="myHeader">
+ <div class="headerPosition sticky py-3 py-md-0" id="myHeader">
              <div  class="logoPosition mobileLogo"> 
-            <div href="#video" class="logoM"> <img style={{visibility:'hidden'}}  src='../images/aqualife-logo.png' class="headerLogo headerLg" alt="logo" /> </div>
+            <div href="#video" class="logoM"> <img style={{visibility:'hidden'}}  src='../images/footer-logo.png' class="headerLogo headerLg" alt="logo" /> </div>
             </div>
         <Navbar  expand="lg">
       
