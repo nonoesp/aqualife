@@ -8,7 +8,7 @@ export default function header(){
     <a href="#video">    <img src='../images/logo-footer.svg' class="logoFooter" alt="logo" />
     </a> 
         <ul class="footerNav pl-0">
-        <a href="#video"><li class="footerItem"> Home</li></a> 
+        {/* <a href="#video"><li class="footerItem"> Home</li></a>  */}
           <a href="#about"><li class="footerItem"> About</li></a> 
           <a href="#products"><li class="footerItem"> Products</li></a> 
           <a href="#news"><li class="footerItem"> News</li></a> 

@@ -28,6 +28,14 @@ table{
 input[type=submit]:focus{
   outline:none;
 }
+.navbar-light .navbar-nav .nav-link{
+  color:grey;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+  color:grey;
+}.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+  color: rgba(0,0,0,.5) !important;
+}
 .navbar-collapse{
   justify-content: center !important;
     align-items: baseline !important;
@@ -871,6 +879,7 @@ outline:none;
     #news .App{
       text-align: unset !important; padding-left:15px;
     }
+
     .navbar .navbar-toggler{
     position: relative;
     }

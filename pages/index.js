@@ -58,7 +58,7 @@ previous() {
 }
 async componentDidMount(){
 
-  disableScroll.on();
+  // disableScroll.on();
         
       var prod= await  directus.items('products').read()
       var news = await  directus.items('news').read()
@@ -92,7 +92,7 @@ async componentDidMount(){
       left: '48.2%'},500, function() {
         $(".animLogo").hide();
         $('.headerLg').css('visibility','visible');
-        disableScroll.off();
+        // disableScroll.off();
 
           window.scroll({
             top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() - $('#myHeader').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
