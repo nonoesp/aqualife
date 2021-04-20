@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 import '../global.js';
 import $ from 'jquery';
 import DirectusSDK from '@directus/sdk-js';
-
+import disableScroll from 'disable-scroll';
 
 // const directus = new DirectusSDK('http://aqualifecms.businessexchange.me');
 const directus = new DirectusSDK(global.URL);
@@ -58,11 +58,7 @@ previous() {
 }
 async componentDidMount(){
 
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
+  disableScroll.on();
         
       var prod= await  directus.items('products').read()
       var news = await  directus.items('news').read()
@@ -96,9 +92,10 @@ async componentDidMount(){
       left: '48.2%'},500, function() {
         $(".animLogo").hide();
         $('.headerLg').css('visibility','visible');
+        disableScroll.off();
 
           window.scroll({
-            top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
+            top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() - $('#myHeader').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
             left: 0,
             behavior: 'smooth'
           });
