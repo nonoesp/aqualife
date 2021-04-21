@@ -19,7 +19,7 @@ import Carousel from "react-slick";
 
 
 import {Button} from 'react-bootstrap';
-import disableScroll from 'disable-scroll';
+// import disableScroll from 'disable-scroll';
 
 class index extends Component {
   constructor(props){
@@ -40,7 +40,7 @@ previous() {
 }
 async componentDidMount(){
 
-  disableScroll.on();
+  // disableScroll.on();
         
       var prod= await  directus.items('products').read()
       var news = await  directus.items('news').read()
@@ -77,7 +77,7 @@ async componentDidMount(){
         $(".animLogo").hide();
         $('.headerLg').css('visibility','visible');
        
-        disableScroll.off();
+        // disableScroll.off();
 
           // window.scroll({
           //   top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
