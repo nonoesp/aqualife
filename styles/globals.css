@@ -709,10 +709,10 @@ padding-top: 90px;
   font-size:15px; color:#7ea7c2; padding-left:70px;
   }
   .qty button{
-  border-radius:5px; border:1px solid #7ea7c2; color:white; background-color: #7ea7c2;
+  border-radius:5px; border:1px solid #7ea7c2; color:white; background-color: #7ea7c2; width:20px;
   }
   .inputne{
-    width: 30%; border:1px solid #7ea7c2;text-align: center;
+    width: 33%; border:1px solid #7ea7c2;text-align: center;
   }
   .inputne:focus{
 outline:none;

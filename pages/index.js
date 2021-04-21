@@ -124,7 +124,7 @@ async componentDidMount(){
 
               
                 <video 
-                playsinline
+                playsInline
                   autoPlay
                   onEnded={() => this.myCallback()}
                   muted
@@ -141,7 +141,7 @@ async componentDidMount(){
             
               <div class="mobileVideo"> 
                 <video 
-                  playsinline
+                  playsInline
                   autoPlay
                   onEnded={() => this.myCallback()}
                   muted
