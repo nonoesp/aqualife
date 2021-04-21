@@ -55,6 +55,15 @@ async componentDidMount(){
           isLoading:false,
           categoryItem:cat.data[0],
       })
+
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > $(window).height()) {
+          $('.headerLg').css('visibility','visible');
+          $(".headerPosition").show();
+          
+        }
+
+    });
   }
 
   onScroll = (props) => {
@@ -68,7 +77,6 @@ async componentDidMount(){
     // }
      myCallback = () => {
       $(".animLogo").show();
-      $('.headerPosition').css('display','none');
       $(".headerPosition").show();
       
       $(".animLogo").animate({top: (window.innerWidth > 760)?'50px':'30px',
@@ -116,6 +124,7 @@ async componentDidMount(){
 
               
                 <video 
+                playsinline
                   autoPlay
                   onEnded={() => this.myCallback()}
                   muted
@@ -132,6 +141,7 @@ async componentDidMount(){
             
               <div class="mobileVideo"> 
                 <video 
+                  playsinline
                   autoPlay
                   onEnded={() => this.myCallback()}
                   muted
