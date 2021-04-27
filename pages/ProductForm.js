@@ -15,7 +15,8 @@ class ProductForm extends Component {
       
     
         super(props);
-           this.state={startDate:new Date(),
+           this.state={
+           startDate:new Date(),
            name: '',
            email: '',
            phone: '',
@@ -24,7 +25,6 @@ class ProductForm extends Component {
            sent:false,
            date:'',
            time: 'am',
-       
           };
           
        

@@ -116,6 +116,9 @@ var input={email: e.target.elements?.email?.value,
 
 var requestOptions = {
   method: 'POST',
+  headers: new Headers({
+    'Content-Type': 'application/json'
+  }), 
   body: JSON.stringify(input)
   };
 
