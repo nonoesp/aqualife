@@ -27,7 +27,7 @@ class index extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
 
-    this.state={deps:[],products:[],product:{},categories:[],category:{},categoryItem:{},news:[],addModalsShow: false, addModalsShowNews:false, addModalsShowProduct: false,cart:[],isLoading:true}
+    this.state={deps:[],products:[],product:{},selected_news:{},categories:[],category:{},categoryItem:{},news:[],addModalsShow: false, addModalsShowNews:false, addModalsShowProduct: false,cart:[],isLoading:true}
 
     this.onScroll = this.onScroll.bind(this);
 
@@ -145,7 +145,7 @@ async componentDidMount(){
                   autoPlay
                   onEnded={() => this.myCallback()}
                   muted
-                  src="../aqualifewithbg.mp4"
+                  src="../aqualifemobile.mp4"
                     type="video/mp4"
                     class="videoPlayerMob"
                   >
@@ -166,17 +166,17 @@ async componentDidMount(){
           </section>
           */}
           <section id="products" >
-            <div class="contentModule pt-5">
-              <div> 
-                     <h3 class="py-3 pt-md-0  title">{this.state.categoryItem.title}</h3>
+            <div class="contentModule pt-4">
+              <div class=" position-lg-absolute"> 
+                     <h3 class="py-2 pt-md-0  title">{this.state.categoryItem.title}</h3>
                       
-                      <p class="py-3 col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
+                      <p class="py-2 col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
                       <Button cart={cart}
                             onClick={()=> this.setState({addModalsShow: true})}> 
                         PLACE ORDER
                         </Button>
               </div>
-                {this.state.product?<Product show={this.state.addModalsShowProduct} product={(this.state.product)?this.state.product:{}} onHide={addModalsCloseProduct}/>:null}
+                {this.state.product?<Product show={this.state.addModalsShowProduct} category={this.state.category.name} product={(this.state.product)?this.state.product:{}} onHide={addModalsCloseProduct}/>:null}
                 <Carousel adaptiveHeight={true}  ref={c =>
                   (this.carousel = c)} {...settings} >
                   {this.state.categories.map((category,index)=> (
@@ -189,7 +189,7 @@ async componentDidMount(){
                               {
                                   return(
                                   <div class="col-4 mx-auto content"> 
-                                    <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
+                                    <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,category:category,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
                                     <div class="middle"> 
                                       <div class="text pt-5">{product.products_id.size}</div>
                                     </div>
@@ -259,9 +259,9 @@ async componentDidMount(){
                       </div>
                       <div>
                        
-                      
-                        <p onClick={()=>
-                            this.setState({addModalsShowNews: true})} class="readMore btn "> Read More</p>
+                      <button onClick={()=>
+                            this.setState({addModalsShowNews: true,selected_news:news})} type="button" class="btn btn-primary">READ MORE</button>
+                        
                     
                        
                       </div>
@@ -269,6 +269,7 @@ async componentDidMount(){
                   ))} 
                    <News
                         show={this.state.addModalsShowNews}
+                        news={this.state.selected_news}
                         //if its true the product will be show if it's false not show
                         onHide={addModalsCloseNews}
                         />

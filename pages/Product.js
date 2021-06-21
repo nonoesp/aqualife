@@ -36,9 +36,10 @@ render(){
         </div>
  <section id="productDetail"> 
    <Modal.Body>
-<div class="row rowStyle m-3">
+<div class="row  m-3">
 <div class="col-md-4 paddingDesc"> 
         <div class="row" class="order"> 
+             <p class="orderSubTitle m-0">{this.props.category}</p>
              <p class="orderTitle"> {product.product_name} </p> 
              {/* <span class="orderSubTitle"> Fill out your info</span> */}
              <p class="description"> {product.product_description} </p>
@@ -58,9 +59,9 @@ render(){
 </div>
       <div class="col-md-4 popUpBottle"> 
       {/* <img src={global.ASSET_URL+product.product_image+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" /> */}
-      <img src={global.ASSET_URL+product.product_image_popup+'?key=system-medium-contain'} class="bottleDetail" alt="bottle" />
+      <img src={global.ASSET_URL+product.product_image_popup+'?key=system-medium-contain'} class="bottleDetail w-50 w-md-75" alt="bottle" />
          </div> 
-   <div class="col-md-4 specification"> 
+   <div class="col-md-4 specification rowStyle d-flex"> 
        
        <table>
        <tr class="bottleCategory">
