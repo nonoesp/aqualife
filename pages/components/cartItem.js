@@ -5,7 +5,7 @@ import Cart from '../../cart.js';
 import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {useCart} from 'react-use-cart '
-
+import '../../global.js';
 
 
 export class CartItem extends Component {
@@ -67,7 +67,7 @@ export class CartItem extends Component {
         return(
 
                 <div class="list pt-3"> 
-                    <img src='../images/bottle.png' alt="bottle"/>
+                    <img class="p-md-3 p-2" src={global.ASSET_URL+this.state.cart.product_image+'?key=system-medium-contain'} alt="bottle"/>
                     <div class="px-4"> <p> { this.state.cart.product_name }</p>
                         <span class="orderSubTitle"> qty</span>
                     <div class="qty pt-3">  

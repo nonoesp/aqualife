@@ -23,8 +23,8 @@ render(){
         </Modal.Header>
       <Modal.Body class="p-4 ">
 <div class="px-4 text-center"> 
-<p class="title"> {this.props.news?.title}</p>
-<img src={global.ASSET_URL+this.props.news?.image+'?key=system-large-contain'} class="newsImage w-50" alt="logo" />
+<p class="categoryDesc"> {this.props.news?.title}</p>
+<img src={global.ASSET_URL+this.props.news?.image+'?key=system-large-contain'} class="newsImage w-100 w-md-50" alt="logo" />
 
 
 

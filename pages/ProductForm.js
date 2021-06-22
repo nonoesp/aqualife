@@ -93,7 +93,7 @@ return(
       <Form.Control type="email" name="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email" required />
     </Form.Group>
         <Form.Group controlId="exampleForm.ControlInput3">
-          <Form.Control type="phone"  name="phone" pattern="[0-9]*" value={this.state.phone} onChange={this.handlePhone} placeholder="Phone Number" required/>
+          <Form.Control type="phone"  name="phone"  value={this.state.phone} onChange={this.handlePhone} placeholder="Phone Number" required/>
         </Form.Group>
      <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Control as="textarea" name="message" value={this.state.textarea} onChange={this.handleMessage} placeholder="Address, Builling Detail" rows={3} required/>

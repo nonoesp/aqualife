@@ -20,6 +20,8 @@ import Carousel from "react-slick";
 
 import {Button} from 'react-bootstrap';
 // import disableScroll from 'disable-scroll';
+var canPlay = false;
+var paused = false;
 
 class index extends Component {
   constructor(props){
@@ -54,48 +56,86 @@ async componentDidMount(){
           news:news.data,
           isLoading:false,
           categoryItem:cat.data[0],
+          canPlay:false
       })
 
+      
+
       $(window).scroll(function() {
+        if($(document).scrollTop()  == 0 && canPlay == true)
+        {
+         
+          $(".animLogo").animate({top: '50%',
+          width: '52vw',
+          left: '50%'},500, function() {
+            $(".animLogo").show();
+            $(".headerPosition").slideUp();
+            canPlay = false;
+         //   $('.headerLg').css('visibility','visible');
+          });
+        }
         if ($(document).scrollTop() > $(window).height()) {
           $('.headerLg').css('visibility','visible');
+          $(".headerPosition").slideDown();
+        }
+        else{
+          $(".headerPosition").slideUp();
+        }
+
+        if(paused == true)
+        {
+          paused = false;
+          $('video').trigger('play');
+          $(".animLogo").show();
           $(".headerPosition").show();
           
+          $(".animLogo").animate({top: (window.innerWidth > 760)?'50px':'30px',
+          width: '135px',
+          left: '48.2%'},500, function() {
+            $(".animLogo").hide();
+            $('.headerLg').css('visibility','visible');
+           
+            // disableScroll.off();
+    
+              // window.scroll({
+              //   top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
+              //   left: 0,
+              //   behavior: 'smooth'
+              // });
+           // $('video').slideUp();
+            window.scrollBy(0,window.innerHeight);
+            
+            canPlay = true;
+            
+            
+           
+          });
         }
 
     });
-  }
+
+    var $video = $('video');
+    var video = $video.get(0);
+
+    video.addEventListener('timeupdate', function() {
+        var lastCheckedAt = $video.data('lastcheck') || 0;
+        $video.data('lastcheck', this.currentTime);
+        
+        if (this.currentTime >= 13.3 && lastCheckedAt < 13.3) {
+          this.pause();
+          paused = true;
+
+        }
+      });
+    }
 
   onScroll = (props) => {
     const { currentFrame } = props
     this.setState({ frame: Math.floor(currentFrame)})
   }
- 
-    // onLoad = ({ wrapper, playbackRate, el }) => {
-    //   document.getElementById("one").style.marginTop = `calc(${Math.floor(document.getElementById('v0').duration) * playbackRate + 'px'})`
-     
-    // }
-     myCallback = () => {
-      $(".animLogo").show();
-      $(".headerPosition").show();
-      
-      $(".animLogo").animate({top: (window.innerWidth > 760)?'50px':'30px',
-      width: '135px',
-      left: '48.2%'},500, function() {
-        $(".animLogo").hide();
-        $('.headerLg').css('visibility','visible');
-       
-        // disableScroll.off();
 
-          // window.scroll({
-          //   top: (window.innerWidth > 760)? ($('.videoPlayerDesk').height() ):($('.videoPlayerMob').height() + $('#myHeader').height()),
-          //   left: 0,
-          //   behavior: 'smooth'
-          // });
-        $('video').slideUp();
-       
-      });
-     };
+  
+ 
   render(){
     const {cart} =this.state;
    
@@ -126,7 +166,7 @@ async componentDidMount(){
                 <video 
                 playsInline
                   autoPlay
-                  onEnded={() => this.myCallback()}
+                
                   muted
                   src="../aqualifewithbg.mp4"
                   type="video/mp4"
@@ -143,7 +183,7 @@ async componentDidMount(){
                 <video 
                   playsInline
                   autoPlay
-                  onEnded={() => this.myCallback()}
+                 
                   muted
                   src="../aqualifemobile.mp4"
                     type="video/mp4"
@@ -171,10 +211,9 @@ async componentDidMount(){
                      <h3 class="py-2 pt-md-0  title">{this.state.categoryItem.title}</h3>
                       
                       <p class="py-2 col-md-4 px-0 description"> {this.state.categoryItem.description}</p>
-                      <Button cart={cart}
-                            onClick={()=> this.setState({addModalsShow: true})}> 
-                        PLACE ORDER
-                        </Button>
+                    
+                        <button cart={cart}
+                            onClick={()=> this.setState({addModalsShow: true})}type="button" class="btn btn-primary px-3">PLACE ORDER</button>
               </div>
                 {this.state.product?<Product show={this.state.addModalsShowProduct} category={this.state.category.name} product={(this.state.product)?this.state.product:{}} onHide={addModalsCloseProduct}/>:null}
                 <Carousel adaptiveHeight={true}  ref={c =>
@@ -188,7 +227,7 @@ async componentDidMount(){
                               if(product.products_id)
                               {
                                   return(
-                                  <div class="col-4 mx-auto content"> 
+                                  <div class="col-4 px-0 px-md-2 mx-auto content"> 
                                     <img key={'prod-image-'+index} src={global.ASSET_URL+product.products_id.product_image+'?key=system-medium-contain'} onClick={()=> this.setState({product:product.products_id,category:category,addModalsShowProduct: true})} class={"bottle"+index} alt="bottle" />
                                     <div class="middle"> 
                                       <div class="text pt-5">{product.products_id.size}</div>
@@ -260,7 +299,7 @@ async componentDidMount(){
                       <div>
                        
                       <button onClick={()=>
-                            this.setState({addModalsShowNews: true,selected_news:news})} type="button" class="btn btn-primary">READ MORE</button>
+                            this.setState({addModalsShowNews: true,selected_news:news})} type="button" class="btn btn-primary px-3">READ MORE</button>
                         
                     
                        

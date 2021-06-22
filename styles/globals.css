@@ -561,9 +561,7 @@ video:focus{
     z-index: 1000;
     width: 100%;
   }
-   .bottlePosition .col-4, .popUpBottle{
-     height:400px;
-    }
+  
   .categoryDesc{
   color:black; font-size:25px; font-weight:bold;
   }
@@ -629,7 +627,7 @@ padding-top: 90px;
     color:#7ea7c2;
   }
   .bottleCategory{
-  font-size:15px; font-family: "DINPro"; color:#7ea7c2;line-height: 1.2em;
+  font-size:15px; font-family: "DINPro"; color:#7ea7c2;
   }
   .orderSubTitle{
   font-size:15px; color:white;
@@ -774,6 +772,12 @@ outline:none;
     .position-lg-absolute{
       position:absolute;
     }
+    .w-md-75{
+      width: 75%;
+    }
+    .w-md-50{
+      width: 50%;
+    }
   }
   @media (max-width: 940px){
   
@@ -838,9 +842,7 @@ outline:none;
       padding: 8px;
       font-size: 13px;
     }
-    .orderSubTitle{
-      color:#7ea7c2;
-    }
+   
     .modal.show .modal-dialog{
       margin: 25px !important;
     }
