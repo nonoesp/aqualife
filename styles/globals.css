@@ -565,6 +565,9 @@ video:focus{
   .categoryDesc{
   color:black; font-size:25px; font-weight:bold;
   }
+  .modal-content .categoryDesc{
+    color:white;
+  }
   .subDesc{
   color:grey;
   font-size:14px;
@@ -582,11 +585,18 @@ video:focus{
   .modal-dialog{
 padding-top: 90px;
   }
-.modal-content{
+.news-block{
   background: linear-gradient( 
-    300deg
+    0deg
      , #f0f0f0 20%, rgb(126 167 194) 90%);
      border-radius:20px !important;
+}
+
+.modal-content{
+  background: linear-gradient(
+    300deg
+    ,#f0f0f0 20%,rgb(126 167 194) 90%);
+  border-radius:20px !important;
 }
   .close{
   font-size:35px !important; color:#7ea7c2 !important; border:none !important; 
@@ -771,12 +781,13 @@ outline:none;
     }
     .position-lg-absolute{
       position:absolute;
+      z-index:10;
     }
-    .w-md-75{
-      width: 75%;
+    img.w-md-75{
+      width: 75% !important;
     }
     .w-md-50{
-      width: 50%;
+      width: 50%  !important;
     }
   }
   @media (max-width: 940px){

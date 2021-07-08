@@ -120,7 +120,7 @@ return(
 </div>
 </div> 
     <Form.Group controlId="exampleForm.ControlTextarea2">
-    <Form.Control as="textarea" name="address" placeholder="Aditional Message" rows={3} required />
+    <Form.Control as="textarea" name="address" placeholder="Aditional Message" rows={3}  />
   </Form.Group>
   {/* <div class="row pr-5 pb-5" id="confirm"> 
 
