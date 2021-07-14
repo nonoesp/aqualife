@@ -337,7 +337,7 @@ video:focus{
     width: 82vw;
     left: 50%;
     transform: translate(-50%, -35%);
-    z-index: 1000000;
+    z-index: 100;
   }
 
   .afterAnim{
